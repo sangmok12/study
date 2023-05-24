@@ -1,0 +1,13 @@
+ctrl + shift + l   전체단축키 보기
+ctrl + +-  폰트 크기
+ctrl + D  한줄삭제
+ctrl + alt + down,up  행단위 복사
+alt + shift + A     영역지정  후 커서에서 Shift 로 움직여서 다중선택 
+alt + Up, Down  행단위  이동
+ctrl + i    들여쓰기 맞추기
+ctrl + /   주석 설정(토글 : 다시누르면 원위치)
+ctrl + space   자동완성  (sysout ctrl +space : println)
+     -  윈도우 - 프리퍼런스 - 자바 - 에디터 - 템플레이트       자동완성 수정
+     
+ctrl + F   클래스 안에서 단어 검색
+ctrl + H   전체 프로젝트에서 검색
