@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 
+ <style>
+
+div.sticky {
+	position:sticky;
+	width:100px;
+	height:50px;
+	top:0px;
+	bottom:10px;
+	left:500px;
+	right:100px;
+	background:red;
+	border:2px dotted green;
+}
+			
+ </style>
+  <body>
+  <!-- sticky 원래의 위치에서 스크롤이 도달할때 정해진위치에 fixed 됨.
+     맨 아래에 놔서 안된이유는 아래로 더 내려갈 스크롤이 없어서 몰랐음. left는 안되나봄-->
+  
+ 
+  
+  <p>스크롤 올리며 테스트 진행</p>
+  <p>익스플로어는 적용안됨.</p>
+     <div style="height:1500px;width:100px;background-color:yellow">123
+  </div>
+   <div class="sticky">광고주세요.</div>
+  
+    <div style="height:1500px;width:100px;background-color:yellow">123
+  </div>
+  <div style="height:100px;width:3000px;background-color:yellow">123
+  </div>
+
+ </body>
+ 
+</html>

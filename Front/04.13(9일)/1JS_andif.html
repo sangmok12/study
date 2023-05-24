@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 
+ <script>
+	var kor = prompt("국어점수 입력")
+	var eng = prompt("영어점수 입력")
+	
+	
+	if (kor > 60 && eng > 60)
+	{document.write("합격")
+	}
+	else if (kor > 60 && eng <= 60)
+	{document.write("국어점수 " + kor + "점 <br>영어점수 " + eng + "점으로 <br>영어점수가 60점을 넘지않아 불합격")
+	}
+	else if (kor <= 60 && eng > 60)
+	{document.write("국어점수 " + kor + "점 <br>영어점수 " + eng + "점으로 <br>국어점수가 60점을 넘지않아 불합격")
+	}
+	else
+	{document.write("불합격")
+	}
+	
+	
+	
+	{document.write("<br>------------------------------------------<br>")}
+	
+	
+	
+	
+	
+	
+	if (kor > 60)
+	{if (eng > 60)
+	{document.write("합격");
+	}}
+	else {document.write("불합격");}
+
+	
+	{document.write("<br>------------------------------------------<br>")}
+	
+	var gender = prompt("성별을 입력해주세요(M/F)");
+	var gender = gender.toUpperCase();
+	/* 젠더값을 대문자로 바꿔주기 위해 한번 더 함. */
+	if (gender == "M")
+	{document.write("남성");
+	}
+	else if (gender == "F")
+	{document.write("여성");
+	}
+	else
+	{document.write("잘못입력하셨습니다.")}
+	
+		{document.write("<br>------------------------------------------<br>")}
+		{document.write("<br>------------------------------------------<br>")}
+	var str = "ABcd";
+	
+	document.write(str.toUpperCase() );
+	document.write("<br>------------------<br>");
+	document.write(str.toLowerCase() );
+	document.write("<br>------------------<br>");
+	document.write(str);
+ </script>
+ <body>
+  
+ </body>
+</html>

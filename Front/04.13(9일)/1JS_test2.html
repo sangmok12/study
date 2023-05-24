@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <script>
+	
+	var eng = 50;
+	var kor = 100;
+	var hap = eng+kor;
+	var avg = hap/2;
+	// 변수가 중복되면 마지막것을 사용. 이미 합과 에버는 계산되었기에 그대로.
+	var eng = 70
+	
+	// 같은 출력값 안에 이질적인 존재를 쓰려면 +를 써야함,
+	// 연산에서 + 사용하거나  다른존재를 연결하거나
+	document.write("합계 : " +hap);
+	//document.write(hap);
+	document.write("<br>");
+	document.write(avg);
+	
+	document.write("<br>");
+	document.write("<br>");
+	// 연산에 ""쓰면 변수의 성질 잃어버림
+	
+	document.write("avg");
+	document.write("<br>"+avg);
+	document.write("<br>");
+	document.write("<br>");
+	document.write("<br>");
+	
+	
+	document.write("국어 : " + kor +"<br>");
+	document.write("영어 : " + eng +"<br>");
+	document.write("총합 : " + hap +"<br>");
+	document.write("평균 : " + avg);
+ </script>
+ 
+ 
+ 
+ 
+ <body>
+  
+ </body>
+</html>

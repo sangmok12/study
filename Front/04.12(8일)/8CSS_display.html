@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <style>
+ 
+ /* body안에 하위div에 적용하겠다. 사실상 당연 바디안에 있긴함. */
+	
+	body div {
+		font-size:20px;
+		margin-bottom:50px;
+		}
+	.none_div {
+		display:none;
+		background-color:teal;
+		}
+	.block_div {
+		display:block;
+		width:500px;
+		height:50px;
+		background-color:yellow;
+		}
+/* inline width랑 height 적용되지 않음 */
+	.inline_div {
+		display:inline;
+		width:500px;
+		height:50px;
+		background-color:brown;
+		}
+	.inline-block_div {
+		display:inline-block;
+		width:500px;
+		height:50px;
+		background-color:gold;
+		}
+
+		
+		
+ </style>
+ <body>
+  
+  hello
+  <div class="none_div">I am none</div>
+  <div class="block_div">I am block</div>
+  <div class="inline_div">I am inline</div>
+  <div class="inline-block_div">I am inline-block</div>
+  
+  
+  <!-- diplay 
+		none : 화면에서 사라짐
+		block : 기본값. 기본적으로 width가 자신의 컨테이너에 100%(가로한줄 다 차지함)
+		inline : 컨텐츠를 감쌀 정도만, 크기조절 X 줄바꿈안함.
+		inline-block : inline과 block 합침 크기조절 가능.
+  
+  
+ </body>
+</html>

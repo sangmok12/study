@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>8CSS_memberagree</title>
+  
+    <!-- CSS 링크로 다 연결함.-->
+  <link rel="stylesheet" type="text/css" href="8CSS_mainstyle.css">
+  
+ </head>
+ 
+ <body>
+  <div ID=wrap>
+  <header>
+	header
+  </header>
+  <nav>
+		<div class="outer">
+		<ul>
+		<li class="menulink"><a href="#">홈</a></li>
+		<li class="menulink"><a href="C:/lsm/개발자/04.12(8일)/8CSS_memberagree.html">회원가입</a></li>
+		<li class="menulink"><a href="C:/lsm/개발자/04.12(8일)/8CSS_boardlist.html">공지사항</a></li>
+		<li class="menulink"><a href="#">답변게시판</a></li>
+		<li class="menulink"><a href="C:/lsm/개발자/04.12(8일)/8CSS_loginwrite.html">로그인</a></li>
+		<li class="menulink"><a href="#">일정관리</a></li>
+		</ul>
+		</div>
+		
+	
+  </nav>
+  <aside>
+	aside
+  </aside>
+  <section>
+	<div class="board">
+	<form name="frm" 
+		method="POST" 
+		action="memberWriteSave.jsp"
+		autocomplete="on">
+ <table align="center" border="1" width="600">
+	<tr>
+		<th width="25%">아이디</th>
+		<td width="75%">
+		<input type="text" name="ID" placeholder="아이디를 입력해주세요." autofocus></td>
+	</tr>
+	<tr>
+		<th>비밀번호</th>
+		<td><input type="password" name="pass" placeholder="암호를 입력해주세요." autocomplete="off"></td>
+	</tr>
+	<tr>
+		<th>이름</th>
+		<td><input type="text" name="name" placeholder="이름을 입력해주세요."></td>
+	</tr>
+	<tr>
+		<th>성별</th>
+		<td>
+		남<input type="radio" name="gender" value="M">
+		여<input type="radio" name="gender" value="F" checked>
+		</td>
+	</tr>
+	<tr>
+		<th>이메일</th>
+		<td><input type="email" name="email" placeholder="이메일을 입력해주세요."></td>
+	</tr>
+	<tr>
+		<th>생일</th>
+		<td><input type="date" name="birthday">(예:2000-12-25)</td>
+	</tr>
+	<tr>
+		<th>핸드폰번호</th>
+		<td><input type="number" name="phone" placeholder="-를 제외하고 입력해주세요."></td>
+	</tr>
+	<tr>
+		<th>가입경로</th>
+		<td>
+			<select name="abc" size="4" multiple>
+				<option value="친구추천">친구추천</option>
+				<option value="인터넷검색">인터넷검색</option>
+				<option value="광고">광고</option>
+			</select>
+		</td>
+	</tr>
+	<tr align="center">
+		<td colspan="2">
+		<input type="submit" value="회원가입">
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="reset" value="새로고침">
+		</td>
+	</tr>
+ </table>
+ </form>
+ </div>
+
+  </section>
+  <footer>
+	footer
+  </footer>
+  </div>
+  
+  
+ 
+  
+  
+  
+  
+ </body>
+</html>

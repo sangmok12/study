@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <script>
+ 
+var name = prompt("학생명 입력");
+var addr = prompt(name + "주소 입력"); 
+
+ 
+ 
+ document.write(name + " 학생의 주소는 " + addr + "입니다.");
+ document.write("<br>");
+
+	
+
+
+var eng = prompt(name + "영어점수 입력",0);
+var kor = prompt(name + "국어점수 입력",0);
+var hap = Number(eng) + Number(kor);
+var avg = hap/2
+
+
+document.write(name+"의 영어점수 : " + eng + "<br>");
+document.write(name+"의 국어점수 : " + kor + "<br>");
+document.write(name+"의 점수총합 : " + hap + "<br>");
+document.write(name+"의 평균점수 : " + avg + "<br>");
+ </script>
+ <body>
+  
+ </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <style>
+	body {
+		text-align:center;
+		}
+	header {
+		background:red;
+		height:100px;
+		line-height:100px;
+		}
+	nav {
+		background:ivory;
+		line-height:30px;
+		/* valign 을 잡기위해 line-height를 같게 잡거나, 
+		padding-top 값과 height, padding-bottom 등으로 조절할 수 있다. */
+		padding-top:20px;
+		padding-bottom:20px;
+		}
+	section {
+		padding-top:20px;
+		background:skyblue;
+		height:450px;
+		line-height:50px;
+		}
+	footer {
+		background:blue;
+		height:55px;
+		line-height:55px;
+ </style>
+
+ 
+ 
+ <body>
+	<header>header 영역</header>
+	<nav>
+		<table align="center" border="0" width="300">
+			<tr bgcolor="#f0f0f0">
+			<th height="30"><a href="6loginWrite.html">로그인</a>
+			</th>
+			<th><a href="6memberAgree.html">회원가입</a>
+			</th>
+			<th><a href="6boardList.html">게시판</a>
+			</th>
+			</tr>
+		 </table>
+	</nav>
+	<section>
+		 
+ <table align="center" border="0" width="90%" height="100">
+	<tr>
+		<th>
+		<iframe src="c:/lsm/개발자/04.10(6일)/6message_agree.txt" width="700" height="300" frameborder="1">
+		</iframe>
+		</th>
+	</tr>
+	<tr height="30">
+		<th>
+		<input type="checkbox" name="chk" value="">
+		위 약관에 동의합니다.(필수)
+		</th>
+	</tr>
+	<tr>
+		<th>
+		<input type="button" value="다음"
+				onclick="location='6memberWrite.html'">
+		</th>
+	</tr>
+ </table>
+	</section>
+	<footer>footer 영역</footer>
+  
+   
+  
+  
+ </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 
+ <style>
+ /* 세로선 없이 가로선만 있게 하기. body쪽 table border="0"
+	CSS에서 table border-top, th,td border-bottom 설정 */
+	table {
+		width:600px;
+		border-top:1px solid #444444;
+		border-collapse:collapse;
+		background-color:lightpink;
+		}
+	th,td {
+		border-bottom:1px solid #444444;
+		padding:10px;
+		}
+	
+	caption {
+		color:pink;
+		font-size:30px;
+		font-weight:bold;
+		padding-bottom:20px;
+		}
+ </style>
+ 
+ 
+ 
+ 
+ 
+ <body>
+  
+  <table border="0">
+	<caption>학생정보목록</caption>
+	<colgroup>
+		<col width="150" style="background:lightpink">
+		<col span="2" width="150" style="background:lightblue">
+	</colgroup>
+	
+	<thead>
+		<tr>
+			<th>학번</th>
+			<th>이름</th>
+			<th>학과</th>
+		</tr>	
+	</thead>
+	<tbody>
+		<tr>
+			<td>202012345</td>
+			<td>홍길동</td>
+			<td>컴퓨터공학과</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td>20201445</td>
+			<td>길버트</td>
+			<td>영여영문학과</td>
+		</tr>
+	</tfoot>
+	<tr>
+		<td>20201445</td>
+		<td>길버트</td>
+		<td>영여영문학과</td>
+	</tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ </body>
+</html>

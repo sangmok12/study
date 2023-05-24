@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 
+ <script>
+	
+	
+	var eng = 100
+	if (eng == 100) {
+		document.write("영어점수는" + eng +"점으로 만점입니다.");
+	}
+	else {
+		document.write("영어점수는"+ eng +"점으로 만점이 아닙니다.");
+	}
+	
+	document.write("<br>");
+	document.write("<br>");
+	
+	var kor = 70
+	if (kor<60)
+	{
+		document.write("국어점수는" + kor +"점으로 불합격입니다.")
+	}
+	else
+	{
+		document.write("국어점수는" + kor +"점으로 합격입니다.")
+	}
+	
+	
+	document.write("<br>-------------------------------<br>");
+	
+	var gender = 1;
+	if (gender > 2)
+	{document.write("오류");
+	}
+	else if (gender == 1)
+	{document.write("남성");
+	}
+	else if (gender == 2)
+	{document.write("여성");
+	}
+	
+	document.write("<br>-------------------------------<br>");
+	
+	// 점수 100 초과 "점수오류" 0 미만 "점수오류"
+	
+
+	
+	
+	var score = prompt("점수입력");
+	if (score >= 80)
+	{document.write("우수")
+	}
+	else if (score >= 60)
+	{document.write("보통")
+	}
+	else 
+	{document.write("미흡")
+	}
+	
+	
+	/*  60점 이상에 보통이 먼저 걸리면 우수에 안나옴 위 순서에 걸리면 빠져나감.
+	var score = prompt("점수입력");
+	if (score >= 60)
+	{document.write("보통")
+	}
+	else if (score >= 80)
+	{document.write("우수")
+	}
+	else 
+	{document.write("미흡")
+	}
+	*/
+	
+		document.write("<br>-------------------------------<br>");
+		
+	var A = prompt("년차입력");
+	if (A >= 15)
+	{document.write("특급")
+	}
+	else if (A >= 10)
+	{document.write("고급")
+	}
+	else if (A >= 6)
+	{document.write("중급")
+	}
+	else 
+	{document.write("초급")
+	}
+	
+ </script>
+ 
+ 
+ 
+ <body>
+  
+ </body>
+</html>
