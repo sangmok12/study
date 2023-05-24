@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <style>
+	td {
+		width:30px;
+		height:30px;
+		border:1px solid #cccccc;
+	}
+	
+ </style>
+ <script>
+	function fn_color(color) { // 매개변수
+		//화면.body(태그).스타일(css).속성 = 값;
+		document.body.style.background = color;
+	}
+ </script>
+ <body>
+  <table>
+	<tr>
+		<td bgcolor="yellow" 
+			onmouseover="fn_color('yellow')" onmouseout="fn_color('#ffffff')"></td>
+	</tr>
+	<tr>
+		<td bgcolor="pink" 
+			onmouseover="fn_color('pink')" onmouseout="fn_color('#ffffff')"></td>
+	</tr>
+  </table>
+ </body>
+</html>

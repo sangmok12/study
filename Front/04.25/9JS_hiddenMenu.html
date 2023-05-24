@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <style>
+	body {
+		padding: 10px;
+		text-align: center;
+	}
+	.dropdown {
+		position: relative;
+		display: inline-block;   /* text로 취급한다. */
+	}
+	.btn {
+		padding: 5px 20px;
+		width: 120px;
+		font-size:12px;
+		background-color:brown;
+		color:white;
+	}
+	#subMenu {
+		position: absolute;
+	}
+	#subMenu a{
+		display:block;    /* 독립성 */
+		background-color:#dfdfdf;
+		width:100px;
+		font-size:12px;
+		color:black;
+		text-decoration:none;
+		padding:10px;
+		margin:2px 0px 0px 0px;
+	}
+ </style>
+ <script>
+	function fn_menu() {
+		var s = document.getElementById("subMenu");
+		if (s.style.display == "none")	{    //안보이는 상태에선 보이게
+			s.style.display = "block";
+		} else {
+			s.style.display = "none";     // 보이는 상태에선 안보이게.
+		}
+	}
+ </script>
+ <body>
+  <div class="dropdown">
+  <button type="button" class="btn" onclick="fn_menu()">IT도서</button>
+  <div style="display:none;" id="subMenu">
+		<a href='#'>자바 시작하기</a>
+		<a href='#'>오라클 설치하기</a>
+		<a href='#'>스프링 마스터</a>
+  </div>
+  </div>
+ </body>
+</html>

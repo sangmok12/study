@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <style>
+	#box1 {
+		color:white;
+		width:250px;
+		height:70px;
+		border:2px solid #ffcc66;
+		font-size:40px;
+		text-align:center;
+	}
+	
+ </style>
+ <body>
+  
+  <table>
+	<script>
+		
+		var color = ["00","33","66","99","cc","ff"];
+		for(var i=5; i>=0; i--) {
+			for(var j=0; j<=5; j++) {
+				for (var k=0; k<=5; k++) {
+					c = color[i]+color[j]+color[k];
+					// 000000, 000033, 000066
+					// 003300, 003333, 003366
+					
+					
+					// "  안에 \" 안에  '
+					//bgColor 대문자 구분함.
+					document.write("<td width='25' height='25' bgcolor='#" + c + "' onmouseover=\"document.bgColor='#" + c + "'\" onmousemove=\"document.getElementById('box1').innerHTML = '#" +c+ "';\"></td>");
+					
+					if (j == 5 && k == 5)
+					{document.write("</tr><tr>");
+					}
+					
+				}
+			
+			}
+			
+		}
+		var color = ["00","33","66","99","cc","ff"];
+		for(var i=0; i<=5; i++) {
+			for(var j=0; j<=5; j++) {
+				for (var k=0; k<=5; k++) {
+					c = color[i]+color[j]+color[k];
+					// 000000, 000033, 000066
+					// 003300, 003333, 003366
+					
+					
+					// "  안에 \" 안에  '
+					//bgColor 대문자 구분함.
+					document.write("<td width='30' height='30' bgcolor='#" + c + "' onmouseover=\"document.bgColor='#" + c + "'\" onmousemove=\"document.getElementById('box1').innerHTML = '#" +c+ "';\"></td>");
+					
+					if (j == 5 && k == 5)
+					{document.write("</tr><tr>");
+					}
+					
+				}
+			
+			}
+			
+		}
+		document.write("<p><div id='box1'></div></p>");
+		
+	</script>
+ </table>
+ 
+  
+ </body>
+</html>

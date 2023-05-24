@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 
+ <script>
+	function fn_color(color) {
+		document.bgColor = color;
+	}
+ </script>
+ <body>
+	<table border="1">
+	<script>
+		c = "#ff9966";
+		document.write("<tr><td bgcolor='" + c + "' onmouseover=\"fn_color('" + c + "')\">" + c + "</td></tr>");
+		
+		c = "#ff99cc";
+		document.write("<tr><td bgcolor='" + c + "' onmouseover=\"fn_color('" + c + "')\">" + c + "</td></tr>");
+		
+		c = "#ff99ff";
+		document.write("<tr><td bgcolor='" + c + "' onmouseover=\"fn_color('" + c + "')\">" + c + "</td></tr>");
+	</script>
+	</table>
+ </body>
+</html>

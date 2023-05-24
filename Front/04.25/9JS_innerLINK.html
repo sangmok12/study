@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 
+ <script>
+	// getElementById : 특정 오브젝트를 인지하는 함수 : 반드시 ID값
+	// querySelector : 특정 오브젝트를 인지하는 함수 : ID 또는 Class
+	// # : ID,     . : class
+	function fn_test1() {
+		document.querySelector("#test").innerHTML = "<h1>수박</h1>";
+	}
+	function fn_test2() {
+		document.querySelector("#test").innerText = "<h1>수박</h1>";
+	}
+	
+	function fn_link(n) {   // n = "naver";
+		var mylink = document.getElementById('mylink');  //a 태그의 id : mylink
+		if (n == "naver") {
+			mylink.innerText="네이버";
+			mylink.href="http://naver.com";
+			mylink.target = "_blank";
+		}
+		else if (n == "daum") {
+			mylink.innerText="다음";
+			mylink.href="http://daum.net";
+			mylink.target="_blank";
+		}
+	}
+ </script>
+ <body>
+  <p>
+	<button type="button" onclick="fn_test1()">크게1</button>
+	<button type="button" onclick="fn_test2()">크게2</button>
+	
+  </p>
+  <div ID="test">수박</div>
+  
+  <hr>
+  <hr>
+  
+  <p>
+	다음 도메인으로 이동 : <a href="http://google.com" id="mylink">구글</a>
+  </p>
+  <input type="button" value="네이버" onclick="fn_link('naver')">
+  <input type="button" value="다음" onclick="fn_link('daum')">
+ </body>
+</html>

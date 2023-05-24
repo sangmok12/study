@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  
+   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+ </head>
+ <script>
+	$(function() {
+		var cnt1 = 0;
+		var cnt2 = 0;
+		$("#input > input[type='text']").keydown(function() {
+			cnt1++;
+			$("#result").html("cnt1 : " + cnt1 + " / cnt2 : " + cnt2);
+		});
+		$("#input > input[type='text']").keyup(function() {
+			cnt2++;
+			$("#result").html("cnt1 : " + cnt1 + " / cnt2 : " + cnt2);
+		});
+	});
+ </script>
+ <body>
+  <h1>key 이벤트</h1>
+	<div id="input">
+	<input type="text" />
+	</div>
+  <h2>결과</h2>
+  <div id="result"></div>
+ </body>
+</html>

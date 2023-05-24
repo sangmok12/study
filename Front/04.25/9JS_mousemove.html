@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <style>
+	.space1 {
+		padding:5px;
+		text-align:center;
+	}
+	
+	.space2 {
+		padding:30px;
+		text-align:center;
+	}
+ </style>
+ 
+ <script>
+	var x = 0;   //전역변수(전지역에서 사용하는) = 함수 밖에 위치한 변수
+	var y = 0;
+	var z = 0;
+	
+	function fn_mousemove() {
+		var eng = 100; //지역변수( 함수 내 위치)
+		document.getElementById("cnt1").innerHTML = z+=1;
+	}
+	
+	function fn_mouseover() {
+	 // document.write(eng); 다른 함수에 있어서 사용못함.
+	 // var x = 0;  실행할때마다 0을 1 로 만들어서 누적증가 안됨.
+		document.getElementById("cnt2").innerHTML = x+=1;
+	}
+	
+	function fn_mouseout() {
+		document.getElementById("cnt3").innerHTML = y+=1;
+	}
+ </script>
+ <body>
+  <table border="1">
+	<tr>
+		<td class="space1" id="cnt1">0</td>
+		<td class="space1" id="cnt2">0</td>
+		<td class="space1" id="cnt3">0</td>
+	</tr>
+	<tr>
+		<td class="space2" onMouseMove="fn_mousemove()">on MouseMove</td>
+		<td class="space2" onMouseOver="fn_mouseover()">on MouseOver</td>
+		<td class="space2" onMouseOut="fn_mouseout()">on MouseOut</td>
+	</tr>
+  </table>
+ </body>
+</html>

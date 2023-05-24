@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+ </head>
+ 
+ <script>
+	$(function(){
+		
+		/*for (var i=1; i<11; i++) {
+			document.write("*");
+		}*/
+		
+		$("#btn1").click(function(){
+			//var n1 = document.getElementById("n1").value;
+			var n1 = $("#n1").val();
+			var n2 = $("#n2").val();
+			if(n1 == "") {
+				alert("첫번째값을 입력해주세요.");
+				return false;
+			}
+			if(n2 == "") {
+				alert("두번째값을 입력해주세요.");
+				return false;
+			}
+			
+			
+			var result = Number(n1)+Number(n2);
+			alert( result );
+		});	
+	});
+ </script>
+ <body>
+  
+  <input type="text" id="n1"> +
+  <input type="text" id="n2"> =
+  <input type="button" id="btn1" value="결과">
+ </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <script>
+	var a = 0; //전역변수
+	var b = 0;
+	
+	function test1() {
+		var eng = 90;  //지역변수
+		document.write( eng + "<br>");
+		document.write( a + "<br>");
+		document.write( test2() );
+	}
+	
+	function test2() {
+		var kor = 100;
+		return kor;  //호출한 곳으로 값을 보내줌.
+	}
+ </script>
+ <body>
+  
+  
+  <input type="button" value="버튼" onclick="test1()">
+ </body>
+</html>
