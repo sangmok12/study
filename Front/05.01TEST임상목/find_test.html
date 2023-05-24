@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <script>
+	function fn_submit() {
+		
+		
+			
+			if (document.frm.email.value.indexOf("@")== -1 )  {
+		        alert("올바른 email형식이 아닙니다(@없음)")
+				return;
+				}
+			if (document.frm.text.value != "215086")
+				{alert("자동등록방지 숫자가 맞지않습니다.")
+				return;
+				}
+			else
+			document.frm.submit();
+	}
+	
+	
+	
+ </script>
+ <style>
+ .head
+		{
+		 color:#383838;
+		 font-size:12px;
+		 font-family:맑은고딕;
+		 
+		 
+		 
+		 .btn_find
+		{
+		 cursor:pointer;
+		 background-color:#99cc66;
+		  color:#fff;
+		   border:none; 
+		   border-radius:10px; 
+		   padding:10px;
+		   min-height:30px; 
+		   min-width: 150px;
+		}
+		 .btn_close
+		{
+		 cursor:pointer;
+		 background-color:gray;
+		  color:#fff;
+		   border:none; 
+		   border-radius:10px; 
+		   padding:10px;
+		   min-height:30px; 
+		   min-width: 60px;
+		}
+</style>
+ <body>
+  
+  <div class="head">
+  <form name="frm" 
+		method="POST" 
+		action="memberWriteSave.jsp">
+		
+		
+		<table border="0" width="600" height="300">
+			<tr>
+				<td height="80">
+					회원가입 시 등록하신 이메일 주소를 입력해 주세요.<br>
+					해당 이메일로 아이디와 비밀번호 정보를 보내드립니다.
+				</td>
+			</tr>
+			<tr>
+				<td height="30">
+				E-mail 주소<input type="email" name="email" autofocus style="width:250px;">
+				</td>
+			</tr>
+			<tr>
+				<td height="100">
+					<img src="number.png"></img><input type="text" name="text" style="width:80px;height:40px;"><br>자동등록방지 숫자를 순서대로 입력하세요.
+				</td>
+			</tr>
+			<tr align="center">
+				<td height="90">
+					<input class="btn_find" type="button" name="find" value="확인" onclick="fn_submit()">
+					<input class="btn_close" type="button" name="close" value="창닫기">
+				</td>
+			
+			</tr>
+		</table>
+  
+  
+ </body>
+</html>

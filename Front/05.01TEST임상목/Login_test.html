@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <script>
+	function fn_submit() {	
+			if (document.frm.userid.value.length < 4 || 12 < document.frm.userid.value.length)
+			{alert("아이디는 4~12자리로 만들어주세요.");
+			return;
+			}
+			if (document.frm.pass.value.length < 8 || 20 < document.frm.pass.value.length)
+			{alert("비밀번호는 8~20자리로 만들어주세요.");
+			return;
+			}
+			document.frm.submit();
+	}
+	
+	function fn_find(){
+	var url = "find_test.html";
+	window.open(url,"a1","width=500,height=400,left=400,top=250");  // (웹주소, 별칭, 옵션)
+	}
+ </script>
+ <style>
+	 a {
+			font-size:12px;
+			font-weight:bold;
+			color:black;
+			text-decoration:none;
+			}
+	.head
+		{
+		 color:#383838;
+		 font-size:12px;
+		 font-family:맑은고딕;
+		}
+	.btn_login
+		{
+		 cursor:pointer;
+		 background-color:#99cc66;
+		  color:#fff;
+		   border:none; 
+		   border-radius:10px; 
+		   padding:10px;
+		   min-height:60px; 
+		   min-width: 60px;
+		}
+	.btn_find
+		{
+		 cursor:pointer;
+		 background-color:#99cc66;
+		  color:#fff;
+		   border:none;
+		   padding:5px;
+		   height:30px; 
+		   min-width: 100px;
+		}
+	.btn_memberwrite
+		{
+		 cursor:pointer;
+		 background-color:#fff;
+		  color:#99cc66;
+		   border:1px solid #99cc66; 
+		   padding:5px;
+		   height:30px; 
+		   min-width: 60px;
+		}
+	
+ </style>
+ <body> 
+  
+  <div class="head">
+  <form name="frm" 
+		method="POST" 
+		action="memberWriteSave.jsp">
+		
+		
+		<table bgcolor="#f0f0f0" border="0" width="600" height="250">
+			<tr bgcolor="white">
+				<td height="100">
+				<table border="0" width="500" height="90" align="center">
+					<tr>
+						<td width="100" height="30"> 
+						회원아이디 
+						 
+						</td>
+						<td width="150">
+							<input type="text" name="userid" autofocus>
+						</td>
+						<td rowspan="2" width="80">
+							<input class="btn_login" type="button" name="login" value="로그인" onclick="fn_submit()">
+						</td>
+					</tr>
+					<tr>
+						<td height="30">
+							비밀번호
+						</td>
+						<td>
+							<input type="password" name="pass">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3" height="30"><input type="checkbox">자동로그인</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+			<tr>
+				<td height="100">
+				
+					<table border="0" width="550" height="90" align="center">
+					<tr>
+						<td colspan="2" width="100" height="30"> 
+						<b>회원로그인 안내</b>
+						 
+						</td>
+						
+					</tr>
+					<tr>
+						<td height="30" colspan="2">
+							회원아이디 및 비밀번호가 기억 안나실 때는 아이디/비밀번호 찾기를 이용하십시오.<br>
+							아직 회원이 아니시라면 회원으로 가입 후 이용해 주십시오.
+						</td>
+						
+					</tr>
+					<tr>
+						<td width="300" height="30"></td>
+						<td width="250">
+							<input type="button" class="btn_find" name="find" value="아이디 비밀번호 찾기" onclick="fn_find()">
+							<a href="agree_test.html"><input type="button" class="btn_memberwrite" name="memberwrite" value="회원 가입"></a>
+						</td>
+					</tr>
+					</table>
+					
+				</td>
+			</tr>
+			<tr>
+				<td height="50" bgcolor="white">
+					<p align="center"><a href="http://www.jejurentacar.com">메인으로 돌아가기</a></p>
+				</td>
+			</tr>
+		</table>
+</form>
+</div>
+ </body>
+</html>

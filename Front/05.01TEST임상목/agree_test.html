@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 
+ <script>
+	function fn_agree() {
+		
+		var len = document.frm.chk.length;
+		var chk = true;
+		for (var i=0; i<len; i++) { 
+			if (document.frm.chk[i].checked == false) {
+				chk = false;
+			}
+		}
+		if (chk == false) { 
+		  alert("모든 약관에 동의를 해주세요.");
+		  return;
+		}
+	
+		document.frm.submit()
+		
+	}
+	
+ </script>
+ 
+ 
+ 
+ <style>
+	.btn_agree
+		{
+		 cursor:pointer;
+		 background-color:#99cc66;
+		  color:#fff;
+		   border:none; 
+		   border-radius:10px; 
+		   padding:10px;
+		   min-height:30px; 
+		   min-width: 120px;
+		}
+	
+	
+	.wrap {
+		margin-left:10%;
+		margin-right:10%;
+		}
+
+	
+
+ </style>
+ <body>
+	
+  
+ <form name="frm" method="POST" action="memberagree.jsp">
+ 
+ <div class="wrap">
+  <h4>회원가입약관</h4><br>
+  <center><font size="2px" color="red">회원가입약관 및 개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있습니다.</font></center><br>
+  <center><font size="2px"><b>회원가입약관</b></font></center><br>
+	<iframe src="txt1.txt" frameborder="0" style="margin:0 auto;overflow:auto;width:100%;height:200px;font-size:12px;background:#e6e6e6;
+		 font-family:맑은고딕;">
+		</iframe><br>
+		
+	<p style="text-align:right"><font size="2px">회원가입 약관의 내용에 동의합니다. <input type="checkbox" name="chk"></font></input></p>
+	<br><br>
+	
+	
+	<center><font size="2px"><b>개인정보처리방침안내</b></font></center><br>
+	
+	<iframe src="txt2.txt" frameborder="0" style="margin:0 auto;overflow:auto;width:100%;height:200px;font-size:12px;background:#e6e6e6;
+		 font-family:맑은고딕;">
+		</iframe><br>
+	<br>
+	<p style="text-align:right"><font size="2px">개인정보처리방침 안내에 동의합니다. <input type="checkbox" name="chk"></font></input></p>
+  
+  <center><input type="button" class="btn_agree" value="회원가입" onclick="fn_agree()"></input></center>
+  
+  <br>
+  </div>
+ 
+
+	</form>
+ </body>
+</html>
