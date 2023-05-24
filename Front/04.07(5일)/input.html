@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  
+  
+  <form name="form" mothod="post" action="save.jsp">
+  
+   아 이 디 :  <input type="text" value="아이디를 입력해주세요."><br>
+  비밀번호 : <input type="password""><br>
+  성별 : 남<input type="radio"  name="gender" value="남">
+        여<input type="radio"  name="gender" value="여"><br>
+ 학년 : 1학년<input type="radio"  name="grade" value="남">
+       2학년<input type="radio"  name="grade" value="남">
+       3학년<input type="radio"  name="grade" value="남"><br>
+	   
+숨김 : 
+  <input type="hidden"  name="이름" value="값"><br>
+  
+취미 : 축구<input type="checkbox" name="hobby" value="축구">
+      야구<input type="checkbox" name="hobby" value="야구">
+	  농구<input type="checkbox" name="hobby" value="농구">
+	  <br>
+	  
+	  파일선택:
+	  <input type="file" name="myfile">
+  
+  생일<select name="year">
+	<option value="1991">1991년</option>
+	<option value="1992">1992년</option>
+	<option value="1993">1993년</option>
+	<option value="1994">1994년</option>
+	</select>
+	<select name="month">
+	<option value="1">1월</option>
+	<option value="2">2월</option>
+	<option value="3">3월</option>
+	<option value="4">4월</option>
+	</select>
+	<select name="day">
+	<option value="1">1일</option>
+	<option value="2">2일</option>
+	<option value="3">3일</option>
+	<option value="4">4일</option>
+	</select>
+
+	<br>
+  
+  <!-- cols: 가로 rows : 세로 글자수정도 넓이-->
+  내용 <textarea name="content" cols="60" rows="10">내용을 입력하세요.</textarea>
+  <br>
+  
+  <!--submit : 전송 -->
+  <!--reset  : 새로고침 -->
+  <!--button : 없음 -->
+  
+  <input type="submit" value="저장">
+  <input type="reset"  value="새로고침">
+  <input type="button"  value="아이디찾기">
+  
+  </form>
+  
+  
+  
+  
+  
+  
+  
+ </body>
+</html>

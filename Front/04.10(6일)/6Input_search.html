@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 
+ <script>
+ function rangeSet(value) {
+	 // 현재창,폼이름,오브젝트명,속성 = 값
+		document.frm1.engValue.value = value;
+		}
+
+ </script>
+ 
+ <body>
+  
+  
+  <!-- method="GET" 으로만 해야 됨 POST 안됨. name"q"로만 해야됨
+  인풋타입 text로 해도 가능.-->
+
+
+<form name="frm1" method="get" action="http://www.google.com/search">
+
+검색<input type="search" name="q">
+<input type="submit" value="검색">
+
+
+
+  
+  
+<br>
+
+영어점수 <input type="text" name="engValue" value="0"><br>
+<input type="range" name="eng" min="0" max="100"
+	   onchange="rangeSet(this.value)">
+
+</form>
+ </body>
+</html>

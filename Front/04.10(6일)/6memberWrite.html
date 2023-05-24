@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>회원가입 폼</title>
+ </head>
+ <!--탑메뉴 START-->
+<style>
+ body {
+	font-size:12px;
+	font-family:맑은고딕;
+  }
+  
+ a {
+	text-decoration:none;
+	color:#555555;
+ 
+ }
+</style>
+ <body>
+  
+  
+ <table border="0" width="300">
+	<tr bgcolor="#f0f0f0">
+		<th height="30"><a href="6loginWrite.html">로그인</a>
+		</th>
+		<th><a href="6memberAgree.html">회원가입</a>
+		</th>
+		<th><a href="6boardList.html">게시판</a>
+		</th>
+	</tr>
+ </table>
+ <!--탑메뉴 END-->
+
+ <!--memberwrite.html-->
+ <!-- 아이디/암호/성별/이메일/생일/핸드폰/가입경로-->
+ <!-- 암호만 오토컴플릿 오프-->
+ <!-- 라디오 checked-->
+ <!-- 옵션 multiple 컨트롤, 시프트로 다중선택-->
+ <br>
+ <form name="frm" 
+		method="POST" 
+		action="memberWriteSave.jsp"
+		autocomplete="on">
+ <table border="1" width="600">
+	<tr>
+		<th width="25%">아이디</th>
+		<td width="75%">
+		<input type="text" name="ID" placeholder="아이디를 입력해주세요." autofocus></td>
+	</tr>
+	<tr>
+		<th>비밀번호</th>
+		<td><input type="password" name="pass" placeholder="암호를 입력해주세요." autocomplete="off"></td>
+	</tr>
+	<tr>
+		<th>이름</th>
+		<td><input type="text" name="name" placeholder="이름을 입력해주세요."></td>
+	</tr>
+	<tr>
+		<th>성별</th>
+		<td>
+		남<input type="radio" name="gender" value="M">
+		여<input type="radio" name="gender" value="F" checked>
+		</td>
+	</tr>
+	<tr>
+		<th>이메일</th>
+		<td><input type="email" name="email" placeholder="이메일을 입력해주세요."></td>
+	</tr>
+	<tr>
+		<th>생일</th>
+		<td><input type="date" name="birthday">(예:2000-12-25)</td>
+	</tr>
+	<tr>
+		<th>핸드폰번호</th>
+		<td><input type="number" name="phone" placeholder="-를 제외하고 입력해주세요."></td>
+	</tr>
+	<tr>
+		<th>가입경로</th>
+		<td>
+			<select name="abc" size="4" multiple>
+				<option value="친구추천">친구추천</option>
+				<option value="인터넷검색">인터넷검색</option>
+				<option value="광고">광고</option>
+			</select>
+		</td>
+	</tr>
+	<tr align="center">
+		<td colspan="2">
+		<input type="submit" value="회원가입">
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="reset" value="새로고침">
+		</td>
+	</tr>
+ </table>
+ </form>
+ 
+ 
+ </body>
+</html>

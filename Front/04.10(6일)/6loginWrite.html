@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+  <!--탑메뉴 START-->
+<style>
+ body {
+	font-size:12px;
+	font-family:맑은고딕;
+  }
+  
+ a {
+	text-decoration:none;
+	color:#555555;
+ 
+ }
+</style>
+ <body>
+  
+  
+ <table border="0" width="300">
+	<tr bgcolor="#f0f0f0">
+		<th height="30"><a href="6loginWrite.html">로그인</a>
+		</th>
+		<th><a href="6memberAgree.html">회원가입</a>
+		</th>
+		<th><a href="6boardList.html">게시판</a>
+		</th>
+	</tr>
+ </table>
+ <!--탑메뉴 END-->
+
+ <!--memberwrite.html-->
+ <!-- 아이디/암호/성별/이메일/생일/핸드폰/가입경로-->
+ <!-- 암호만 오토컴플릿 오프-->
+ <!-- 라디오 checked-->
+ <!-- 옵션 multiple 컨트롤, 시프트로 다중선택-->
+ <br>
+ <form name="frm" 
+		method="POST" 
+		action="memberWriteSave.jsp"
+		autocomplete="on">
+ <table border="1" width="600">
+	<tr>
+		<th width="25%">아이디</th>
+		<td width="75%">
+		<input type="text" name="ID" placeholder="아이디를 입력해주세요." autofocus></td>
+	</tr>
+	<tr>
+		<th>비밀번호</th>
+		<td><input type="password" name="pass" placeholder="암호를 입력해주세요." autocomplete="off"></td>
+	</tr>
+	
+	<tr align="center">
+		<td colspan="2">
+		<input type="submit" value="로그인">
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="reset" value="새로고침">
+		</td>
+	</tr>
+ </table>
+ </form>
+ 
+ 
+ </body>
+</html>
