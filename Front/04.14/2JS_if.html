@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <script>
+	alert("안녕!!");    //메세지창    [확인]
+	var lunch = confirm("점심드셨나요?");  // 확인창   [확인][취소]
+	
+	if (lunch == true)
+	{ document.write("네, 공부하세요.");
+	}
+	else
+	{ document.write("아? 배고프시겠네요.");
+	}
+	
+	
+	document.write("<hr>");
+	
+	
+	
+	
+	document.write( 1==1 );   //true
+	document.write("<hr>");
+	document.write( 1==2 && 2==3 );   //false
+	document.write("<hr>");
+	
+	// && (and) 연산자
+	if ( 1==1 && 2==3 )       // 내용물(조건식의 결과물)이 맞으면 실행하겠습니다.
+	{
+		document.write("111");
+	}
+	else          // 모든 내용물이 맞지 않으면 이곳을 실행하겠습니다.
+	{
+		document.write(" (1==1 && 2==3) 에서 2==3 조건은 맞지 않아 222(false)입니다.");
+	}
+	
+	document.write("<hr>");
+	document.write("<hr>");
+	
+	
+	//  || (or) 연산자
+	if ( 1==2 || 3==3 )
+	{document.write("( 1==2 || 3==3 ) 에서 둘중에 하나는 맞으니 333(true)");
+	}
+	else 
+	{document.write("444");
+	}
+	
+	
+	document.write("<hr>");
+	
+	
+	
+	var pat = prompt("펫 이름을 입력해주세요","");
+	if (pat == "고양이")
+	{document.write("사장님 ~ 고양이가 맞으므로 사겠습니다.");
+	}
+	else
+	{document.write("고양이가 아니네요, 다음에 오겠습니다.");
+	}
+	
+	
+		
+	document.write("<hr>");
+	
+	var cat_price = 1000;
+	var my_money = prompt("가진돈이 얼맙니까?");
+	
+	if (cat_price > my_money)
+	{  document.write("고양이 값은 " + cat_price + "원인데, 가진돈은 " + my_money + "원으로 은행 잔고가 부족하여 고양이를 못삼.");
+	}
+	else if (cat_price < my_money)
+	{  document.write("고양이 값은 " + cat_price + "원인데, 가진돈은 " + my_money + "원으로 고양이를 살 수 있습니다.");
+	}
+	else if (cat_price==my_money)
+	{  document.write("고양이 값도 " + cat_price + "원으로 구매는 할 수 있으나, 구매 후 잔고가 0입니다.");
+	}
+	
+	
+	document.write("<hr>");
+	
+
+ </script>
+ <body>
+  
+ </body>
+</html>

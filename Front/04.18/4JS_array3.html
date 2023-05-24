@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 
+ <script>
+ 
+ 
+	var hap = 0;
+	var avg = 0;
+	var cnt = 0;
+	var top1 = 0;
+	var bottom1 = 100;
+	var eng = [90,50,0,78,0,70,64,80,33,22];
+	
+	
+	
+	for (i=0; i<eng.length; i++)
+	{hap += eng[i];
+	 if (eng[i] == 0)
+	 { cnt++;
+	 }
+	 if (top1 < eng[i])
+	 {top1 = eng[i]
+	 }
+	 if (bottom1 > eng[i] && eng[i] != 0)
+	 {bottom1 = eng[i]
+	 }
+	}
+	
+	
+	avg = Math.floor(hap / eng.length);
+	avg2 = Math.floor(hap / (eng.length-cnt));
+	
+	
+	
+	document.write("각 영어점수는 " + eng + "점 이며, <br><br>");
+	document.write("총합 점수는 " + hap + "점 입니다. <br>");
+	document.write("평균 점수는 " + avg + "점 입니다. <br>");
+	document.write("0점처리를 뺀 평균 점수는 " + avg2 + "점 입니다. <br>");
+	document.write("이번 시험의 1등 점수는 " + top1 + "점 입니다. <br>");
+	document.write("이번 시험의 꼴등 점수는 " + bottom1 + "점 입니다.");
+	
+ </script>
+ <body>
+  
+ </body>
+</html>

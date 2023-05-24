@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <script>
+		/* 커피머신 */
+	
+	// prompt창  :  1. 맥심  2. 카누카푸치노  3.마일드
+	// prompt창  :  1. 벤티  2. 그란데   3. 톨
+	// prompt창  :  1. 기본단맛  2. 약간단맛  3. 아주단맛
+	
+	// 출력내용 : 카누카푸치노 벤티사이즈로 아주단맛을 선택했습니다.
+	
+	
+	
+	
+	var coffee = prompt("커피 종류를 숫자로 고르시오","1. 맥심, 2. 카누카푸치노, 3. 마일드");
+	var size = prompt("사이즈를 숫자로 고르시오","1. 벤티, 2. 그란데, 3. 톨");
+	var taste = prompt("단맛정도를 숫자로 고르시오","1. 기본단맛, 2. 약간단맛, 3. 아주단맛");
+	
+	
+	
+	
+	if (coffee < 1 || coffee > 3)
+	{coffee = 1;
+	}
+	if (coffee == 1)
+	{document.write("맥심");
+	}
+	else if (coffee == 2)
+	{document.write("카누카푸치노");
+	}
+	else if (coffee == 3)
+	{document.write("마일드");
+	}
+	
+	{document.write(" ");}
+	
+	
+	if (size != 1 && size !=2 && size !=3)
+	{size = 2;}
+	if (size == 1)
+	{document.write("벤티");
+	}
+	else if (size == 2)
+	{document.write("그란데");
+	}
+	else if (size == 3)
+	{document.write("톨");
+	}
+	
+	{document.write("사이즈로 ");}
+		
+	if (taste == 1 || taste == 2 || taste == 3)
+	{
+	}
+	else {taste = 1;}
+	if (taste == 1)
+	{document.write("기본단맛");
+	}
+	else if (taste == 2)
+	{document.write("약간단맛");
+	}
+	else if (taste == 3)
+	{document.write("아주단맛");
+	}
+	
+	{document.write("을 선택하셨습니다.");}
+	
+	
+	
+	
+	{document.write("<hr>");}
+	
+	var coffee_value = "";
+	if( coffee == 1 ){coffee_value = "맥심";}
+	else if (coffee == 2){coffee_value = "카누카푸치노";}
+	else {coffee_value = "마일드";}
+	
+	var size_value = "";
+	if( size == 1 ){size_value = "벤티";}
+	else if (size == 2){size_value = "그란데";}
+	else {size_value = "톨";}
+	
+	var taste_value = "";
+	if( taste == 1 ){taste_value = "기본단맛";}
+	else if (taste == 2){taste_value = "약간단맛";}
+	else {taste_value = "아주단맛";}
+	
+	{document.write( coffee_value + "  " + size_value + "사이즈로 " + taste_value + "을 선택하셨습니다.");}
+	
+	{document.write("<hr>");}
+	
+	{document.write( coffee_value);}
+	{document.write("  ");}
+	{document.write(size_value);}
+	{document.write("사이즈로 ");}
+	{document.write(taste_value);}
+	{document.write("을 선택하셨습니다.");}
+ </script>
+ 
+ <body>
+  
+ </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <script>
+document.write("<select>");
+	
+	for (i=1940; i<=2020; i++)
+	{document.write
+	("<option>" + i + "</option>");}
+	
+document.write("</select>");
+	
+	
+	/*  i 갯수만큼 양쪽이 반복되기에 셀렉트창이 60개 만들어짐.
+	
+	for (i=1940; i<=2020; i++)
+	{document.write
+	("<select><option>" + i + "</option></select>");}
+	*/
+
+
+document.write("<hr>");
+for (i=1; i<=10; i++)
+	{
+		if (i == 6)
+{document.write("<br>");}
+document.write("<img src='naver_icon.png' width='100' height='60'>");
+}
+
+document.write("<hr>");
+
+
+
+// 내려온 a 가 if 먼저 걸리는지 순서 중요
+for (var a=1; a<=31; a++){
+	if (a <10)
+	{document.write("<font color='#ffffff'>0</font>");}
+	
+	{document.write(a + "일 ");
+	}
+	if ( a % 7 == 0)
+	{document.write("<br>");
+	}
+	}
+	
+	
+	document.write("<hr>");
+	
+for (var a=1; a<=31; a++){
+	if (a % 7 == 1)
+	{document.write("<br>");
+	}document.write(a + "일 ");
+	}
+	
+	
+	document.write("<hr>");
+	
+	
+	
+	
+	
+	
+	document.write("<table border='0' width='270'><tr align='right'>");
+for (var a=1; a<=35; a++){
+	
+	if (a<=31)
+	{document.write("<td>"+ a + "일</td> ");
+	}
+	else if (a > 31)
+	{document.write("<td></td>");
+	}
+	if ( a % 7 == 0)
+	{document.write("</tr><tr align='right'>");
+	
+	}
+	}
+document.write("</tr></table>");	
+
+	document.write("<hr>");
+	
+	var cnt = 0;
+	
+	document.write("<table border='1' width='400'><tr align='right'>");
+	for (a=1; a<=31; a++)
+	{document.write("<td>" + a + "일</td>");
+	cnt++;
+		if ( a % 7 == 0)
+		{document.write("</tr><tr align='right'>");
+		 }
+		 }
+		 while (cnt % 7 != 0)
+		 {document.write("<td></td>");
+		 cnt++;}
+	document.write("</tr></table>");
+
+ </script>
+ <body>
+ 
+ 
+ 
+ 
+ 
+ </body>
+</html>

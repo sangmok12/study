@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <style>
+	.btn_agree
+		{
+		 cursor:pointer;
+		 background-color:#99cc66;
+		  color:#fff;
+		   border:none; 
+		   border-radius:10px; 
+		   padding:10px;
+		   min-height:30px; 
+		   min-width: 120px;
+		}
+	.btn_cancle
+		{
+		 cursor:pointer;
+		 background-color:white;
+		  color:#99cc66;
+		   border:1px solid #99cc66; 
+		   border-radius:10px; 
+		   padding:10px;
+		   min-height:30px; 
+		   min-width: 120px;
+		}
+		.font
+		{font-size:12px;
+		 font-family:맑은고딕;
+		 }
+	.head
+		{font-size:12px;
+		 font-family:맑은고딕;
+		}
+	.wrap {
+		margin-left:10%;
+		margin-right:10%;
+		}
+	
+	header {
+		padding-left:5%;
+		padding-right:5%;
+		width:"100%";
+		height:35px;
+		line-height:30px;
+		background:#ebebeb;
+		}
+	nav {
+		padding-left:5%;
+		padding-right:5%;
+		width:"100%";
+		height:130px;
+		}
+	menu {
+		line-height:30px;
+		padding-left:5%;
+		padding-right:5%;
+		width:"100%";
+		height:38px;
+		background-image:url(green.png);
+		}
+	section {
+		padding-left:5%;
+		padding-right:5%;
+		width:"100%";
+		}
+	footer {
+		position:relative;
+		padding-left:5%;
+		padding-right:5%;
+		width:"100%";
+		height:200px;
+		line-height:30px;
+		background:#ebebeb;
+		}
+	th {
+	    font-weight:normal;
+		border-top:2px solid black;
+	}
+	.btn_submit {
+		padding:8px;
+		border:0;
+		background:#99cc99;
+		color:white;
+		cursor:pointer;
+		border-radius:3px;
+		}
+ </style>
+ <body>
+	
+  <header>
+  <div class="head">
+	<table width="100%">
+		<tr>
+			<td width="7%">HOME</td>
+			<td width="37%">즐겨찾기</td>
+			<td width="7%">회원가입</td>
+			<td width="7%">로그인</td>
+			<td width="7%">마이페이지</td>
+			<td width="7%">예약조회</td>
+			<td width="7%">공지사항</td>
+			<td width="7%">예약상담</td>
+			<td width="7%">이용후기</td>
+			<td width="7%">개인결제</td>
+		</tr>
+	</table>
+	</div>
+  </header>
+  <nav>
+	<img src="jeju.png" align="center">
+  </nav>
+  <menu>
+  <div class="head">
+	<table width="100%">
+		<tr>
+			<td width="14%"><b><font style="color:yellow">★ 전체차량 리스트 ☆</font></b></td>
+			<td width="10%"><b><font style="color:white">경.소형차량</font></b></th>
+			<td width="10%"><b><font style="color:white">중형차량</font></b></td>
+			<td width="10%"><b><font style="color:white">고급차량</font></b></td>
+			<td width="10%"><b><font style="color:white">SUV/RV</font></b></td>
+			<td width="8%"><b><font style="color:white">승합차량</font></b></td>
+			<td width="8%"><b><font style="color:white">외제차량</font></b></td>
+			<td width="10%"><b><font style="color:white">기사전용차량</font></b></td>
+			<td width="10%"><b><font style="color:white">실시간항공권</font></b></td>
+			<td width="10%"><b><font style="color:white">관광지할인쿠폰</font></b></td>
+		</tr>
+	</table>
+	</div>
+  </menu>
+  
+  
+  <section>
+  <h4>회원가입</h4>
+  <div class="font">
+  <b>사이트 이용정보 입력</b><br>
+	<form name="frm" 
+		method="POST" 
+		action="memberWriteSave.jsp"
+		autocomplete="on">
+ <table border="0" width="100%" bgcolor="#d7d7d7" cellspacing="1">
+	<tr>
+		<th align="left" width="25%" height="60" bgcolor="#e9e9e9">&nbsp;아이디</th>
+		<th width="75%" bgcolor="white" align="left">
+		영문자, 숫자,_만 입력 가능. 최소 3자이상 입력하세요.<br>
+		<input type="text" name="ID" style="width:120px;" autofocus></th>
+	</tr>
+	<tr>
+		<td align="left" bgcolor="#e9e9e9" height="30">비밀번호</td>
+		<td bgcolor="white"><input type="password" style="width:120px;" autocomplete="off"></td>
+	</tr>
+	<tr>
+		<td align="left" bgcolor="#e9e9e9" height="30">비밀번호 확인</td>
+		<td bgcolor="white"><input type="text" style="width:120px;"></td>
+	</tr>
+	
+ </table>
+ </form>
+ <br>
+ <b>개인정보 입력</b>
+<form name="frm" 
+		method="POST" 
+		action="memberWriteSave.jsp"
+		autocomplete="on">
+ <table border="0" width="100%" bgcolor="#d7d7d7" cellspacing="1">
+	<tr>
+		<th align="left" width="25%" bgcolor="#e9e9e9" height="30">&nbsp;이름</th>
+		<th width="75%" bgcolor="white" align="left">
+		<input type="text" style="width:90px;" autofocus></th>
+	</tr>
+	<tr>
+		<td align="left" height="70" bgcolor="#e9e9e9">닉네임</td>
+		<td bgcolor="white">
+		공백없이 한글.영문.숫자만 입력 가능 (한글2자, 영문4자 이상)<br>
+		닉네임을 바꾸시면 앞으로 60일 이내에는 변경 할 수 없습니다.<br>
+		<input type="password" style="width:90px;" autocomplete="off"></td>
+	</tr>
+	<tr>
+		<td align="left" bgcolor="#e9e9e9" height="30">E-mail</td>
+		<td bgcolor="white"><input type="email" style="width:350px;"></td>
+	</tr>
+	<tr>
+		<td align="left" bgcolor="#e9e9e9" height="30">전화번호</td>
+		<td bgcolor="white"><input type="password" name="pass" autocomplete="off"></td>
+	</tr>
+	<tr>
+		<td align="left" bgcolor="#e9e9e9" height="30">휴대폰번호</td>
+		<td bgcolor="white"><input type="password" name="pass" autocomplete="off"></td>
+	</tr>
+	
+ </table>
+ </form>
+ <br>
+ <b>기타 개인설정</b>
+<form name="frm" 
+		method="POST" 
+		action="memberWriteSave.jsp"
+		autocomplete="on">
+ <table border="0" width="100%" bgcolor="#d7d7d7" cellspacing="1">
+	<tr>
+		<th align="left" width="25%" height="30" bgcolor="#e9e9e9" style="font-weight:normal">&nbsp;메일링서비스</th>
+		<th width="75%" bgcolor="white" align="left" >
+		<input type="checkbox" checked="on">정보 메일을 받겠습니다.</th>
+	</tr>
+	<tr>
+		<td align="left" bgcolor="#e9e9e9" height="30">SMS 수신여부</td>
+		<td bgcolor="white">
+		<input type="checkbox" checked="on">휴대폰 문자메세지를 받겠습니다.</td>
+	</tr>
+	<tr>
+		<td align="left" bgcolor="#e9e9e9" height="60">정보공개</td>
+		<td bgcolor="white">
+		정보공개를 바꾸시면 앞으로 0일 이내에는 변경이 안됩니다.<br>
+		<input type="checkbox" checked="on">다른분들이 나의 정보를 볼 수 있도록 합니다.
+		</td>
+	</tr>
+	<tr>
+		<td align="left" bgcolor="#e9e9e9" height="40">자동등록방지</td>
+		<td bgcolor="white"><img src="number.png"></img><input type="text" name="name" style="width:80px;height:40px;"><br>자동등록방지 숫자를 순서대로 입력하세요.</td>
+	</tr>
+	
+ </table>
+ </form>
+ <br>
+		<center>
+		<a href="jeju_join.html"><button class="btn_agree"><b>회원가입</b></button></a>
+		<a href="jeju_join.html"><button class="btn_cancle"><b>취소</b></button></a>
+		</center>
+<br>
+ </div>
+  </section>
+  <footer>
+	<table>
+		<tr>
+			<td align="center">
+				<b>회사소개</b>&nbsp;&nbsp;&nbsp;
+				<b>전자상거래표준약관</b>&nbsp;&nbsp;&nbsp;
+				<b>개인정보 취급방침</b>&nbsp;&nbsp;&nbsp;
+				<b>국내여행표준약관</b>&nbsp;&nbsp;&nbsp;
+				
+				<select name="abc">
+				<option>::제휴사이트링크::</option>
+				<option>-------------</option>
+				<option>제주허브닷컴</option>
+				<option>제주허브렌트카</option>
+				<option>제주렌트카닷컴</option>
+			</select>
+				
+			</td>
+		</tr>
+		<tr>
+			<td align="center">
+				<pre>
+				회사명 제주렌트카 (상호명:제주허브닷컴) 주소 제주특별자치도 제주시 평전길13 (1층. 삼도1동)
+				사업자 등록번호 616-27-75958  대표 조영민  전화 064-747-6606  팩스 064-803-0843
+				통신판매업신고번호 제2020-삼도1동-0032호  개인정보관리책임자 조영민  부가통신사업신고번호  제2011-46호
+				
+				Copyright @ 2016-2020 제주렌트카 (상호명:제주허브닷컴). All Rights Reserved.
+				</pre>
+			</td>
+		</tr>
+	</table>
+  </footer>
+ </body>
+</html>

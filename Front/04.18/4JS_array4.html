@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 
+ 
+ <script>
+	
+	var hap = 0;
+	var avg = 0;
+	var cnt = 0;
+	var top1 = 0;
+	var bottom1 = 200;
+	
+	
+	
+	var a_height = [178,164,186,168,172,-156,174];
+	for (i=0; i<a_height.length; i++){
+	
+		if (a_height[i] > 0)
+		{ hap += a_height[i];
+		}
+			else
+			{ cnt++;
+			}
+		
+		if (top1 < a_height[i])
+		{top1 = a_height[i];
+		}
+		if (bottom1 > a_height[i] && a_height[i] > 0)
+		{bottom1 = a_height[i];
+		}
+	}
+	
+	
+	var avg = hap / (a_height.length - cnt);
+	
+	document.write(hap + "<br>");
+	document.write(avg + "<br>");
+	document.write("카운트" + cnt + "<br>");
+	document.write("최장신은 " + top1 + "cm 입니다. <br>");
+	document.write("최단신은 " + bottom1 + "cm 입니다. <br>");
+	
+	
+	
+	
+ </script>
+ <body>
+  
+ </body>
+</html>
