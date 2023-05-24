@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 
+ <script>
+ 
+ 
+		
+		
+	function fn_action() {
+		
+		
+		var len = document.frm.chk.length;
+		var chk = true;
+		for (var i=0; i<len; i++) { 
+			if (document.frm.chk[i].checked == false) {
+				chk = false;
+			}
+		}
+		if (chk == false) { 
+		  alert("모든 약관에 동의를 해주세요.");
+		  return;
+		}
+		document.frm.submit();
+	}
+	
+	
+	
+	function fn_allchk() {
+		
+		var len = document.frm.chk.length;
+		for (i=0; i<len; i++)	{ 
+			if(document.frm.allchk.checked == true) {
+			 document.frm.chk[i].checked = true;
+	
+			}
+			else {
+			 document.frm.chk[i].checked = false;
+			}
+		}	
+	}
+ </script>
+ <body>
+  
+  <form name="frm" method="post" action="next.jsp">
+  
+  <div style="background:yellow;width:300px;height:100px;"></div>
+  <input type="checkbox" name="chk">
+  위(A) 약관에 동의합니다.<br>
+  
+  <div style="background:lightgreen;width:300px;height:100px;"></div>
+  <input type="checkbox" name="chk">
+  위(B) 약관에 동의합니다.<br><br>
+  
+  
+  <input type="checkbox" name="allchk" onclick="fn_allchk()">
+  전체동의
+  
+  <br><br>
+  <input type="button" name="agree" value="회원가입" onclick="fn_action()">
+  
+  </form>
+  
+ </body>
+</html>

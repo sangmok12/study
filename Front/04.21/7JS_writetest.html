@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 
+ <script>
+	var subject = " Html,mysql,java     ";
+	/*
+	1. 기본출력
+	2. mysql을 oracle로 바꾸어 출력한다.
+	3. 문자열의 길이 출력
+	4. java 단어만 출력
+	5. 인덱스 번호 5번에 해당하는 문자를 출력한다.
+	6. css 라는 단어가 존재하는지 출력(존재함 또는 존재안함)
+	*/
+	
+	document.write(subject);
+	document.write("<hr>");
+	
+	document.write(subject.replace("mysql","oracle"));
+	document.write("<hr>");
+	
+	document.write(subject.length);
+	document.write("<hr>");
+	
+	document.write(subject.substring(12,16));
+	document.write("<hr>");
+	
+	document.write(subject.charAt(5));
+	document.write("<hr>");
+	
+	if (subject.indexOf("css") == -1) {
+		document.write("존재안함");	
+	} else {
+		document.write("존재함");
+		}
+ </script>
+ <body>
+  
+ </body>
+</html>

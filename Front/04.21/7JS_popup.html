@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+  
+  <script>
+  
+  function fn_popup() {
+	  
+	  var url = "http://daum.net";
+	window.open(url,"a1","width=500,height=400,left=400,top=250");  // (웹주소, 별칭, 옵션)
+  }
+   
+	var str = "10+20+30+40";
+	document.write("eval:" + eval(str) + "<br>");
+	
+	
+	document.write("<hr>");
+	
+	
+	var a = "100";
+	var b = "200";
+	var hap = Number(a) + Number(b);
+	document.write(a + " + " + b + "=" + hap );
+	
+	document.write("<hr>");
+  
+    var data = "100";
+	if(isNaN(data) == true) {
+		alert("변수의 값은 문자입니다.");
+	} else {
+		alert("변수의 값은 숫자입니다.");
+	}
+  
+  
+  </script>
+  
+  
+ <body>
+  <!-- a1 윈도우가 먼저 열리고 눌러야 타겟인 a1 창에서 열림 -->
+  <a href="http://naver.com" target="a1">네이버</a>
+ <input type="button" value="popup" onclick="fn_popup()">
+  
+  
+  
+ </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 
+ <script>
+	function fn_action() {
+	
+		
+		
+		/*
+		if (document.frm.ans[0].checked == false &&
+			document.frm.ans[1].checked == false &&
+			document.frm.ans[2].checked == false &&
+			document.frm.ans[3].checked == false)
+		{alert("소주를 선택해주세요.");
+		return;   // 잘못됐으니 전송중단하고 다시 돌아감.
+		}
+		*/
+		var chk = false;
+		for (i=0; i<=3; i++) {
+			if (document.frm.ans[i].checked == true) {
+				chk = true;
+			}
+		}
+		if (chk == false) {
+			alert("투표하지 않았습니다.");
+			return;
+		}
+		
+		else if (document.frm.ans[0].checked == true)
+		{alert("참이슬");}
+		else if (document.frm.ans[1].checked == true)
+		{alert("진로");}
+		else if (document.frm.ans[2].checked == true)
+		{alert("처음처럼");}
+		else
+		{alert("맛있는 참");}
+		// 나머지 선택 잘 했을땐 submit으로 넘어가는데 넘어 갈 곳이 없어서 에러남.
+		document.frm.submit();
+	}
+ </script>
+ <body>
+  
+  
+  <form name="frm" method="post" action="save.jsp">
+	  다음중 가장 자주 마시는 소주는? <br>
+	  <input type="radio" name="ans" value="1">참이슬<br>
+	  <input type="radio" name="ans" value="2">진로<br>
+	  <input type="radio" name="ans" value="3">처음처럼<br>
+	  <input type="radio" name="ans" value="4">맛있는 참<br>
+	  <input type="button" value="투표" onclick="fn_action()">
+  </form>
+ </body>
+ 
+</html>

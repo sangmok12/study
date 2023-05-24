@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 
+ <script>
+    
+ 
+	function fn_submit() {
+		
+		var num = [0,1,2,3,4,5,6,7,8,9]
+		var n1 = true;
+		var nlen = document.frm.name.value.length;
+		var html1 = document.frm.html.checked;
+		var javascript1 = document.frm.javascript.checked;
+		var oracle1 = document.frm.oracle.checked;
+		var java1 = document.frm.java.checked;
+		var spring1 = document.frm.spring.checked;
+			
+			if (document.frm.userid.value.length < 4 || 12 < document.frm.userid.value.length)
+			{alert("아이디는 4~12자리로 만들어주세요.");
+			return;
+			}
+			if (document.frm.pass.value.length < 8 || 20 < document.frm.pass.value.length)
+			{alert("비밀번호는 8~20자리로 만들어주세요.");
+			return;
+			}
+			/* 
+			이름 숫자 X 못함.
+			for (i=0; i<=nlen; i++)
+			{alert(i);
+			
+			return;
+			} */
+			
+			
+			if (document.frm.gender[0].checked == false &&
+			    document.frm.gender[1].checked == false)  {  
+					alert("성별을 체크해주세요.");
+			return;
+			}
+			if (document.frm.phone.value.length != 11)
+			{alert("핸드폰은 11자리를 입력해주세요.");
+			return;
+			}
+		
+			if (html1 == true)
+			{var html1 = 1}
+			if (javascript1 == true)
+			{var javascript1 = 1}
+			if (java1 == true)
+			{var java1 = 1}
+			if (oracle1 == true)
+			{var oracle1 = 1}
+			if (spring1 == true)
+			{var spring1 = 1}
+			if (html1 + javascript1 + java1 + oracle1 + spring1 <3 )
+			{alert("수강과목을 3개이상 선택해주세요.");
+			return;
+			}
+		
+			
+		alert("완성");	
+		
+	}
+ </script>
+ <body>
+ <form name="frm" method="post" action="save.jsp">
+  <table border="1">
+	<caption>학생회원등록</caption>
+	<tr>
+		<td>아이디</td><td><input type="text" name="userid"></td>
+	</tr>
+	<tr>
+		<td>암호</td><td><input type="password" name="pass"></td>
+	</tr>
+	<tr>
+		<td>이름</td><td><input type="text" name="name"></td>
+	</tr>
+	<tr>
+		<td>성별</td><td>남<input type="radio" name="gender">, 여<input type="radio" name="gender"></td>
+	</tr>
+	<tr>
+		<td>핸드폰</td><td><input type="number" name="phone"></td>
+	</tr>
+	<tr>
+		<td>이메일</td><td><input type="email" name="email"></td>
+	</tr>
+	<tr>
+		<td>주소</td><td><input type="text" name="address"></td>
+	</tr>
+	<tr>
+		<td>수강과목<br>(3개이상)</td><td>
+			<input type="checkbox" name="html" value="1">HTML,
+			<input type="checkbox" name="javascript" value="1">javascript,
+			<input type="checkbox" name="java" value="1">java,
+			<input type="checkbox" name="oracle" value="1">oracle,
+			<input type="checkbox" name="spring" value="1">spring</td>
+	</tr>
+	<tr align="center">
+		<td colspan="2"><input type="button" value="회원등록" onclick="fn_submit()"></input><input type="reset" value="다시입력"></td>
+	</tr>
+  </table>
+  </form>
+ </body>
+</html>

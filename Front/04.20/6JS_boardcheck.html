@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ 
+ 
+ <style>
+	td { align:center;
+	  
+	
+ </style>
+ </head>
+ 
+ 
+ <script>
+	function fn_action() {
+		if (document.frm.title.value == "")
+		{alert("제목을 입력하세요.");
+		return;
+		}
+		if (document.frm.pass.value == "")
+		{alert("비밀번호를 입력하세요.");
+		return;
+		}
+		if (document.frm.name.value == "")
+		{alert("이름을 입력하세요.");
+		return;
+		}
+		if (document.frm.content.value == "")
+		{alert("내용을 입력하세요.");
+		return;
+		}
+		document.frm.submit();
+	}
+	
+	
+	
+	
+ </script>
+ <body>
+ <form name="frm" method="POST" action="save.jsp">
+  <table border="1">
+	<caption>게시판 목록</caption>  <!--테이블의 제목-->
+	<colgroup>
+		<col width="25%">
+		<col width="*">
+	</colgroup><tr>
+		<td>제목</td><td width="300" ><input type="text" name="title" autofocus></td>
+	</tr>
+	<tr>
+		<td>암호</td><td><input type="password" name="pass"></td>
+	</tr>
+	<tr>
+		<td>글쓴이</td><td><input type="text" name="name"></td>
+	</tr>
+	<tr>
+		<td>이메일</td><td><input type="email" name="email"></td>
+	</tr>
+	<tr>
+		<td>내용</td><td><textarea name="content" cols="35" rows="5"></textarea></td>
+	</tr>
+	<tr>
+	<!-- "submit" : [키보드 enter]기능 + [전송]기능
+	      return false : submit [전송]기능 제거 -->
+		<td  align="center" colspan="2" height="40"><input type="submit" name="save" value="저장하기" onclick="fn_action();" return fales;>
+						<input type="reset" value="다시쓰기"></td>
+	</tr>
+  </table>
+  </form>
+ </body>
+</html>

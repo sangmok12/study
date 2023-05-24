@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 
+ <script>
+ 
+ 
+ // 연산기호 연속으로 안찍히기.
+ // 처음에 연산기호 먼저 나오지 않기.
+ // 빈공간일때 = 버튼 누름 방지.
+ 
+	function fn_add(n) {
+		var number = [0,1,2,3,4,5,6,7,8,9];
+		var content = document.frm.box.value;
+		var len = content.length;
+		var str = content.substring(len-1,len);
+		
+		var n1 = false;  // 클릭한 버튼 값의 숫자여부
+		var n2 = false;  // 내용의 마지막 값의 숫자여부
+	for (var i=0; i<10; i++) {
+			if( n == number[i] )	n1 = true;
+	}
+	for (var i=0; i<10; i++) {
+			if( str == number[i] )	n2 = true;
+		if (content == "" && n1==false) {
+			
+	}  else if (content != "" && n1==false && n2==false) {
+	}  else {
+		document.frm.box.value = content + n;
+	}
+	}
+	}
+	
+	
+	
+	function fn_clear() {
+		document.frm.box.value = "";
+	}
+	function fn_result() {
+		var content = document.frm.box.value;
+		if (content != "")
+		{document.frm.box.value = eval(content);
+		}
+		
+	}
+	
+	
+ </script>
+ <body>
+  
+  <form name="frm">
+	<table border="1">
+		<tr>
+			<td colspan="4"><input type="text" name="box" readOnly></input></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="1" onclick="fn_add('1')"></input></td>
+			<td><input type="button" value="2" onclick="fn_add('2')"></input></td>
+			<td><input type="button" value="3" onclick="fn_add('3')"></input></td>
+			<td><input type="button" value="+" onclick="fn_add('+')"></input></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="4" onclick="fn_add('4')"></input></td>
+			<td><input type="button" value="5" onclick="fn_add('5')"></input></td>
+			<td><input type="button" value="6" onclick="fn_add('6')"></input></td>
+			<td><input type="button" value="-" onclick="fn_add('-')"></input></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="7" onclick="fn_add('7')"></input></td>
+			<td><input type="button" value="8" onclick="fn_add('8')"></input></td>
+			<td><input type="button" value="9" onclick="fn_add('9')"></input></td>
+			<td><input type="button" value="*" onclick="fn_add('*')"></input></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="C" onclick="fn_clear()"></input></td>
+			<td><input type="button" value="0" onclick="fn_add('0')"></input></td>
+			<td><input type="button" value="." onclick="fn_add('.')"></input></td>
+			<td><input type="button" value="/" onclick="fn_add('/')"></input></td>
+		</tr>
+		<tr>
+			<td colspan="4"><input type="button" value="=" onclick="fn_result()"></input></td>
+		</tr>
+	</table>
+	
+	
+  </form>
+ </body>
+</html>

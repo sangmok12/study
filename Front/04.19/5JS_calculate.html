@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  
+  
+ <style>
+	
+	body {
+	line-height:5px;
+	}
+	
+	
+	.button {
+		background:white;
+		border:1px solid #7a7a7a;
+		width:73px;
+		height:30px;
+	}
+	.txt {
+		padding-left:20px;
+		font-size:20px;
+		color: white; 
+		border-radius: 7px;
+		 background-color: #7fccde;
+		 width:285px;
+		 height:50px;
+		 border: 1px solid rgba(0,0,0,0.21);
+		 border-bottom-color: rgba(0,0,0,0.34);
+		 text-shadow:0 1px 0 rgba(0,0,0,0.15);
+		 box-shadow: 0 1px 0 rgba(255,255,255,0.34) inset, 
+              0 2px 0 -1px rgba(0,0,0,0.13), 
+              0 3px 0 -1px rgba(0,0,0,0.08), 
+              0 3px 13px -1px rgba(0,0,0,0.21);
+	}
+	.btn-two {
+	  color: white; 
+	  border-radius: 7px;
+	  background-color: #7fccde;
+	  width:73px;
+	  height:30px;
+	  display: inline-block;
+	  border: 1px solid rgba(0,0,0,0.21);
+	  border-bottom-color: rgba(0,0,0,0.34);
+	  text-shadow:0 1px 0 rgba(0,0,0,0.15);
+	  box-shadow: 0 1px 0 rgba(255,255,255,0.34) inset, 
+				  0 2px 0 -1px rgba(0,0,0,0.13), 
+				  0 3px 0 -1px rgba(0,0,0,0.08), 
+				  0 3px 13px -1px rgba(0,0,0,0.21);
+		}
+		.btn-3d {
+		  position: relative;
+		  display: inline-block;
+		  font-size: 22px;
+		  padding: 20px 60px;
+		  color: white;
+		  margin: 20px 10px 10px;
+		  border-radius: 6px;
+		  text-align: center;
+		  transition: top .01s linear;
+		  text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+		}
+	
+	
+ </style>
+ </head>
+ 
+ <script>
+	function add(n) {
+		var content = document.frm.screen.value;
+		var lastValue = content.substring(content.length-1,content.length);
+		
+		var c1 = false;
+		if (lastValue == "+" ||
+			lastValue == "-" ||
+			lastValue == "*" ||
+			lastValue == "/")  {
+				c1 = true;
+		}
+		var c2 = false;
+		if (n == "+" ||
+			n == "-" ||
+			n == "*" ||
+			n == "/")  {
+				c2 = true;
+		}
+		if (c1 == false || c2 == false)
+		{document.frm.screen.value = content + n;
+		}
+		
+	}
+		
+		
+	function result() {
+		//연산처리함수 eval
+		var content = eval(document.frm.screen.value);
+		document.frm.screen.value = content;
+	}
+	function fn_clear() {
+		document.frm.screen.value = "";
+	}
+	
+	
+	
+ </script>
+ 
+ 
+ <body>
+  
+  <form name="frm">
+  <input type="text" class="txt" name="screen" readOnly><br><br>
+  <input type="button" value="1" class="btn-two" onclick="add('1')">
+  <input type="button" value="2" class="btn-two" onclick="add('2')">
+  <input type="button" value="3" class="btn-two" onclick="add('3')">
+  <input type="button" value="+" class="btn-two" onclick="add('+')"><br><br>
+  <input type="button" value="4" class="btn-two" onclick="add('4')">
+  <input type="button" value="5" class="btn-two" onclick="add('5')">
+  <input type="button" value="6" class="btn-two" onclick="add('6')">
+  <input type="button" value="-" class="btn-two" onclick="add('-')"><br><br>
+  <input type="button" value="7" class="btn-two" onclick="add('7')">
+  <input type="button" value="8" class="btn-two" onclick="add('8')">
+  <input type="button" value="9" class="btn-two" onclick="add('9')">
+  <input type="button" value="*" class="btn-two" onclick="add('*')"><br><br>
+  <input type="button" value="C" class="btn-two" onclick="fn_clear()">
+  <input type="button" value="0" class="btn-two" onclick="add('0')">
+  <input type="button" value="." class="btn-two" onclick="add('.')">
+  <input type="button" value="/" class="btn-two" onclick="add('/')"><br><br>
+  <input type="button" class="btn-two" style="width:310px; height:50px;" value=" = " onclick="result()">
+  
+  
+  
+  </form>
+ </body>
+</html>

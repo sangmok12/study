@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <script>
+	
+	function plus() {
+		var box = document.frm.box.value;
+		document.frm.box.value = Number(box) + 1;
+	}
+	
+	// plus랑 minus 방법 다름.
+	function minus() {
+		var box = Number(document.frm.box.value)
+		box--;
+		if( box < 0 ) {
+		  box = 0
+		  alert(" 수량은 0이 최소입니다.")
+		}document.frm.box.value = box;
+	}
+ </script>
+ <body>
+  
+  <form name="frm" method="post" action="">
+  <input type="text" style="width:300px;" name="box" size="2" value="1" readOnly>
+  <input type="button" value="+" onclick="plus()">
+  <input type="button" value="-" onclick="minus()">
+  
+  
+  </form>
+ </body>
+</html>
