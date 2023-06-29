@@ -17,8 +17,11 @@ td { text-align:left;     }
 </style>
 <script>
 
+
+
 function fn_popup() {
 	var url = "post1.jsp";
+	// (url,별칭,옵션)
 	window.open(url,"post","width=500,height=200");
 }
 
