@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>고급차량</title>
+  <link rel = "stylesheet" href = "../layout.css">
+ </head>
+ 
+ <body>
+  
+
+  <header>
+  	<div class="head">
+	<table width="100%">
+		<tr>
+			<td width="7%">HOME</td>
+			<td width="37%">즐겨찾기</td>
+			<td width="7%">회원가입</td>
+			<td width="7%">로그인</td>
+			<td width="7%">마이페이지</td>
+			<td width="7%">예약조회</td>
+			<td width="7%">공지사항</td>
+			<td width="7%">예약상담</td>
+			<td width="7%">이용후기</td>
+			<td width="7%">개인결제</td>
+		</tr>
+	</table>
+	</div>
+	
+
+  </header>
+
+<nav>
+	<a href="../main/main.html"><img src="../images/TopIMG.PNG" align="center"></a>
+
+</nav>
+<menu>
+<div class="head">
+	<table width="100%">
+		<tr>
+			<td width="14%"><b><font style="color:yellow">★ 전체차량 리스트 ☆</font></b></td>
+			<td width="10%"><b><font style="color:white">경.소형차량</font></b></th>
+			<td width="10%"><b><font style="color:white">중형차량</font></b></td>
+			<td width="10%"><b><font style="color:white">고급차량</font></b></td>
+			<td width="10%"><b><font style="color:white">SUV/RV</font></b></td>
+			<td width="8%"><b><font style="color:white">승합차량</font></b></td>
+			<td width="8%"><b><font style="color:white">외제차량</font></b></td>
+			<td width="10%"><b><font style="color:white">기사전용차량</font></b></td>
+			<td width="10%"><b><font style="color:white">실시간항공권</font></b></td>
+			<td width="10%"><b><font style="color:white">관광지할인쿠폰</font></b></td>
+		</tr>
+	</table>
+	</div>
+</menu>
+<div class="main-container">
+<section>
+<div style="width:1100px;">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center">
+  <tr>
+    <td width="2%" height="40" align="center"></td>
+    <td height="30" align="left" width="30%"><!-- 대여일자 -->
+		<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%" align=left>
+		  <TR>
+			<TD height=20 vAlign=top><FONT color="#333333" size="2"><B>차량 대여일자</B></FONT></TD>
+		  </TR>
+		  <TR>
+			<TD height=20><input name="ss_date" value="" id="start_selDate_id" class="selDate" size="15" type="text" style="cursor:pointer;" readonly><div id="start_calendar" style="position:absolute; z-index:100;"></div>&nbsp;&nbsp;<select name="ss_hour" id="start_selHour_id" onchange="CalHours()"><option value=08 >08</option><option value=09 >09</option><option value=10 >10</option><option value=11 >11</option><option value=12 >12</option><option value=13 >13</option><option value=14 >14</option><option value=15 >15</option><option value=16 >16</option><option value=17 >17</option><option value=18 >18</option><option value=19 >19</option><!--<option value=20 >20</option>--></select>시&nbsp;&nbsp;<select name="ss_min" id="start_selMin_id" onchange="CalHours()"><option value=00 selected>00</option><option value=10 >10</option><option value=20 >20</option><option value=30 >30</option><option value=40 >40</option><option value=50 >50</option></select>분</TD>
+		  </TR>
+		</TABLE>
+    </td>
+    <td width="5%" height="40" align="center"><IMG alt=화살표 src="http://www.jejurentacar.com/theme/nongsan/skin/shop/rent/images/rent_arraw.gif" width=19 height=28></td>
+    <td height="30" align="left" width="30%"><!-- 반납일자 -->
+		<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%" align=left>
+		  <TR>
+			<TD height=20 vAlign=top width=265><FONT color="#333333" size="2"><B>차량 반납일자</B></FONT></TD>
+		  </TR>
+		  <TR>
+			<TD height=20><input name="ee_date" value="" id="end_selDate_id" class="selDate" size="15" type="text" style="cursor:pointer;" readonly><div id="end_calendar" style="position:absolute; z-index:100;"></div>&nbsp;&nbsp;<select name="ee_hour" id="end_selHour_id" onchange="CalHours()"><option value=08 >08</option><option value=09 >09</option><option value=10 >10</option><option value=11 >11</option><option value=12 >12</option><option value=13 >13</option><option value=14 >14</option><option value=15 >15</option><option value=16 >16</option><option value=17 >17</option><option value=18 >18</option><option value=19 >19</option><!--<option value=20 >20</option>--></select>시&nbsp;&nbsp;<select name="ee_min" id="end_selMin_id" onchange="CalHours()"><option value=00 selected>00</option><option value=10 >10</option><option value=20 >20</option><option value=30 >30</option><option value=40 >40</option><option value=50 >50</option></select>분</TD>
+		  </TR>
+		</TABLE>
+    </td>
+    <td width="5%" height="40" align="center"><IMG alt=화살표 src="http://www.jejurentacar.com/theme/nongsan/skin/shop/rent/images/rent_arraw.gif" width=19 height=28></td>
+    <td width="13%" height="40" align="left"><!-- 이용시간 -->
+		<TABLE border=0 cellSpacing=0 cellPadding=0>
+		  <TR>
+			<TD height=20 vAlign=top><FONT color="#333333" size="2"><B>총 대여시간</B></FONT></TD>
+		  </TR>
+		  <TR>
+			<TD height=20>
+
+<font id='sum_hour'>24</font>시간 <font id='sum_min'>00</font>분
+			</TD>
+		  </TR>
+		</TABLE>
+    </td>
+    <td width="13%" align="center"><input type="image" src="http://www.jejurentacar.com/theme/nongsan/skin/shop/rent/images/rent_search.gif" border="0"></td>
+    <td width="2%" height="40" align="center"></td>
+  </tr>
+  <tr>
+    <td height="20" colspan="8"></td>
+  </tr>
+  <tr>
+    <td colspan="8" width="100%" height="95px" align="left"><!-- 대여자격 및 보험 -->
+		<TABLE border=0 cellSpacing=0 cellPadding=15 width="100%" align="center" style="BORDER-BOTTOM: #d9d9d9 1px solid; BORDER-LEFT: #d9d9d9 1px solid; LINE-HEIGHT: 20px; BORDER-TOP: #d9d9d9 1px solid; BORDER-RIGHT: #d9d9d9 1px solid">
+		  <TR>
+			<TD><IMG alt=렌트공지 src="http://www.jejurentacar.com/theme/nongsan/skin/shop/rent/images/rent_notice1.jpg" width=176 height=36><BR><font color="#555555" size="2">렌트카를 대여하시려면 유효한 운전면허증을 소지한 </font><font color="#ff0000" size="2"><b>만26세 이상으로, 운전경력이 2년이상 </b></font><font color="#555555" size="2">이어야 합니다. (면허증 미지참 및 대여조건에 부합하지 않는경우 대여가 거절됩니다.)<br>&nbsp;- 단, 전기차량 (아이오닉6, EV6, 볼보C40) / 고급차량 (더뉴그랜저, K7프리미어, K8, K9, 제네시스 차종) / SUV.RV차량 (모하비마스터, 트래버스, 제네시스 차종) / 승합차량<BR>&nbsp;&nbsp;&nbsp;&nbsp;(카니발하이리무진, 팰리세이드) 은</font><font color="blue" size="2"><b>만26세 이상으로, 운전경력이 3년이상 </b></font><font color="#555555" size="2">조건으로 대여자격이 변경됩니다.<br>&nbsp;- 단, 특수차량 (타호 7인승, 르노 마스터 13인승, 쏠라티 15인승, 벤츠 스프린터 15인승) 은  </font><font color="blue" size="2"><b>만30세 이상으로, 운전경력이 3년이상 </b></font><font color="#555555" size="2">조건으로 대여자격이 변경됩니다.<br>&nbsp;- 단, 수입 외제차량 은  </font><font color="blue" size="2"><b>만26세 이상으로, 운전경력이 3년이상 </b></font><font color="#555555" size="2">조건으로 대여자격이 변경됩니다.<br>&nbsp;※ </font><font color="#ff0000" size="2"><b>만21세 ~ 25세 이하, 운전경력 2년 미만</b></font><font color="#555555" size="2">도 일부 모델에 한하여 예약진행이 가능하오니, 필히 유선 상담 </font><font color="#00A651" size="2"><b>Tel. 064-747-6606</b></font><font color="#555555" size="2"> 후, 예약진행 부탁드립니다.<br>전차량 종합책임보험(대인.대물.자손보험) 에는  가입되어있으나, 차량손해보험(자차보험) 은 선택 가입사항으로 차량인수시 추가 가입이 가능합니다.<BR>차량인수와 반납은 본사 렌트카 차고지에서만 가능하며, </font><font color="#DA8404" size="2"><b>제주공항-차고지 셔틀버스 운행을 </b></font><font color="#555555" size="2">합니다. (제주공항 주차장내 렌트카 인수반납은 절대 불가합니다.) <BR>	야간인수 및 새벽반납을 원할 경우에는 사전문의 후 별도의 배.회차료가 부과될 수 있습니다. (사전문의 및 예약필수)<BR>제주렌트카닷컴 </font><font color="#ff0000" size="2"><b>예약시스템은 실시간이 아니므로, 상담원과 통화 후에 확정 </b></font><font color="#555555" size="2">이 됩니다. 예약가능여부 미확인 후 입금건에 대해서는 예약진행이 불가 할 수 있습니다.</font><BR><font color="#555555" size="2">예약 취소 및 환불규정은 각 상품별 페이지를 참조해주시기 바랍니다.</font></TD>
+		  </TR>
+		</TABLE>
+    </td>
+  </tr>
+</table>
+</div>
+</form>
+<div style="height:20px"></div>
+	
+	<div class="car_list">
+		<div>
+		<a href="http://www.jejurentacar.com/shop/item.php?it_id=1457767119"><img src="../images/Ray.PNG" align="center"></a><br>
+		신형 더뉴레이 2021년형<br>
+		<strike>120,000원</strike> 18,000원
+		</div>
+		<div>
+		<a href="http://www.jejurentacar.com/shop/item.php?it_id=1457766948"><img src="../images/Casper.PNG" align="center"></a><br>
+		캐스퍼 4인승 2022년형<br>
+		<strike>135,000원</strike> 20,250원
+		</div>
+		<div>
+		<a href="http://www.jejurentacar.com/shop/item.php?it_id=1457766776"><img src="../images/K5.PNG" align="center"></a><br>
+		3세대K5 2019년 ~ 2021년형<br>
+		<strike>180,000원</strike> 27,000원
+		</div>
+		<div>
+		<a href="http://www.jejurentacar.com/shop/item.php?it_id=1457769855"><img src="../images/Torres.PNG" align="center"></a><br>
+		토레스 5인승 2022년형<br>
+		<strike>250,000원</strike> 37,500원
+		</div>
+	</div>
+</section>
+<aside>
+    <div>
+        <img src="../images/aside.PNG" align="center">
+
+    </div>
+    
+    
+</aside>
+</div>
+<footer>
+<div>
+        <ul>
+            <li><a href="http://www.jejurentacar.com/bbs/content.php?co_id=company">회사소개</a></li>
+            <li><a href="http://www.jejurentacar.com/bbs/content.php?co_id=provision">전자상거래표준약관</a></li>
+            <li><a href="http://www.jejurentacar.com/bbs/content.php?co_id=privacy">개인정보 취급방침</a></li>
+            <li><a href="http://www.jejurentacar.com/bbs/content.php?co_id=agreement">국내여행표준약관</a></li>
+            <li><select size="1" id="formselect" style="width:200px;font-family:돋움; font-style:normal; color:#4C4D4B; text-align:center; background-color:#ffffff;" onChange="javascript:if (this.options[this.selectedIndex].value != 'undefined' && this.options[this.selectedIndex].value) {window.open(this.options[this.selectedIndex].value,'_blank');}"  name="select4" class="top" >
+   <option selected>::::제휴사이트 링크::::</option>
+   <option>-----------------------</option>
+   <option value="http://www.jejuhub.com/">제주허브닷컴</option>
+   <option value="http://www.jejuhubrent.com/">제주허브렌트카</option>
+   <option value="http://www.jejusujirent.com/">제주수지렌트카</option>
+   <option value="http://www.jejurentcars.com/">제주렌트카닷컴</option>
+</select></li>
+			        </ul>
+        <p align="center">
+            <span><b>회사명</b> 제주렌트카 (상호명:제주허브닷컴)</span>
+            <span><b>주소</b> 제주특별자치도 제주시 평전길13 (1층, 삼도1동)</span><br>
+            <span><b>사업자 등록번호</b> 616-27-75958</span>
+            <span><b>대표</b> 조영민</span>
+            <span><b>전화</b> 064-747-6606</span>
+            <span><b>팩스</b> 064-803-0843</span><br>
+            <!-- <span><b>운영자</b> 제주렌터카닷컴</span><br> -->
+            <span><b>통신판매업신고번호</b> 제2020-삼도1동-0032호</span>
+            <span><b>개인정보관리책임자</b> 조영민</span>
+
+            <span><b>부가통신사업신고번호</b> 제2011-46호</span><br>
+            <span class="copy">Copyright &copy; 2016-2020 제주렌트카 (상호명:제주허브닷컴). All Rights Reserved.</span>
+        </p>
+    </div>
+</footer>
+
+ </body>
+</html>

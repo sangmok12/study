@@ -1,0 +1,94 @@
+ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none; /* Remove default list bullets */
+        padding: 0; /* Remove default padding */
+    }
+
+    li {
+        margin-left: auto;
+    }
+.main-container {
+	display: flex;
+	}
+ .car_list
+ 		{
+		background-color:#f4f4ea;
+		width:1100px;
+		height:350px;
+		line-height:30px;
+		padding-top:10px;
+		padding-left:5px;
+		display: flex;
+        flex-direction: row;
+		}
+.car_list > div {
+        margin-left: 15px;
+    }
+.btn_agree
+		{
+		 cursor:pointer;
+		 background-color:#99cc66;
+		  color:#fff;
+		   border:none; 
+		   border-radius:10px; 
+		   padding:10px;
+		   min-height:30px; 
+		   min-width: 120px;
+		}
+		.head
+		{font-size:12px;
+		 font-family:맑은고딕;
+		}
+	.wrap {
+		margin-left:10%;
+		margin-right:10%;
+		}
+
+ header {
+		padding-left:5%;
+		padding-right:5%;
+		width:"100%";
+		height:35px;
+		line-height:30px;
+		background:#ebebeb;
+		}
+	nav {
+		padding-left:5%;
+		padding-right:5%;
+		width:"100%";
+		height:130px;
+		}
+	menu {
+		line-height:30px;
+		padding-left:5%;
+		padding-right:5%;
+		width:"100%";
+		height:38px;
+		background-image:url(images/green.png);
+		}
+	section {
+		padding-left:5%;
+		padding-right:5%;
+		width:"100%";
+		}
+	aside {
+		position: sticky;
+		margin-left: auto;
+		right: 0;
+		top: 250px;
+		width: 200px;
+		height: 100%; 
+
+		
+		}
+	footer {
+		font-size:12px;
+		font-family:맑은고딕;
+		padding-left:5%;
+		padding-right:5%;
+		width:"100%";
+		height:200px;
+		line-height:30px;
+		background:#ebebeb;
+		}
