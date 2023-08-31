@@ -1,0 +1,83 @@
+[관리자]
+
+]#useradd yahoo
+]#passwd yahoo
+비번설정
+]#cd /home
+]#ls
+]#cd yahoo
+]#mkdir html
+]#mkdir m
+]#mkdir backup
+]#ls -l                       -- 소유주가  root 상태
+]#chown yahoo.yahoo *         -- 소유주를 전체 yahoo 로 바꿈
+
+========================================================================
+]#yum -y install vsftpd*                   -- ftp 서버 프로그램 설치
+
+]# systemctl enable firewalld             -- 방화벽 설치    
+]# firewall-cmd --permanent --zone=public --add-service=ftp
+]# firewall-cmd --reload   
+
+]# vi/etc/selinux/config                -- 들어가서 SELINUX=disabled 로 바꾸기 (원래 enforcing)
+]# service vsftpd restart            -- 서버 실행        [OK]
+
+
+알드라이브 설치
+FTP 추가
+새로만들기  야후 / 123456로 로그인
+
+html 폴더에  html 작업물들 몇개 넣어주기
+
+]$ tar cvfz html_20230704_01.tar.gz html      -- 로 압축
+]$ mv html_20230704_01.tar.gz backup          -- backup 폴더로 이동
+
+알드라이브 환경에서   backup 폴더에 알집파일 확인 후 내려받기 해보기
+
+
+--------------------------------------------------------------------------
+알드라이브 익명으로 로그인    [pub] 폴더
+]#cd /var/ftp/pub      경로
+
+
+
+
+============================================
+[네임서버]
+]#yum -y install bind*                       -- 설치
+]#firewall-cmd --permanent --add-port=53/udp
+]#firewall-cmd --reload
+
+
+
+1. 환경설정 변경
+]# vi /etc/named.conf                            -- 들어가서 
+listen-on port 53 { any; };                      -- 두 부분 수정
+allow-query     { any; };
+zone "yahoo.com" {                               -- 맨 아래 include 위에 이 부분 작성
+        type master;
+        file "yahoo.zone";
+        allow-update{none;};
+};
+
+2. yahoo.zone 이라는 영역파일 생성
+]#cd /var/named
+]#cp named.localhost yahoo.zone     
+들어가서 아이피 부분 내 아이피로 수정            
+
+3. 호스트 파일에서 필요없는 내용 삭제
+]#vi /etc/hosts              (ex:  yahoo.com  127.0.0.1)
+
+4. 내가 사용하는 네임서버 주소를 바꿈
+]#vi /etc/resolv.conf
+들어가서  nameserver 192.168.85.2  앞에 # 붙이고
+아래에 nameserver 내아이피  적고 나오기
+
+
+5. zone 파일 소유권 설정
+]# chown root.named yahoo.zone
+]# service named restart
+]# ping yahoo.com
+
+
+

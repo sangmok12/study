@@ -1,0 +1,107 @@
+리눅스
+
+
+
+root(슈퍼유저)     ]#
+linux(일반유저)   ]$
+--------------------------
+]#ls -al
+]#touch test1.java                 -- zero파일 생성
+]#cat /etc/passwd                  -- 파일의 내용 확인
+]#cp  /etc/passwd pass.txt
+]#ls -al pass.txt
+]#mkdir java1                     -- 디렉토리(폴더) 만들기
+]#rm test1.java                   -- 파일 삭제
+]#rm -f test1.java                -- -f(강제/ 질문없이 삭제)
+]#rmdir java1                     -- 디렉토리(폴더) 삭제
+]#mkdir java2
+]#touch java2/test1.java          --java2 폴더안에 test1.java 만들기
+]#ls -al java2
+]#rmdir java2         -- 실패 (안에 내용물이 있어서 삭제 불가)
+]#rm -rf  java2                              r (디렉토리) f(강제삭제)
+
+--------------------------------------------------------------
+
+]#touch test2.txt
+]#ls -al test2.txt
+{ 허가권 }
+-rw-r--r--   644
+
+
+	u	g	o
+-        rw-      r--      r--
+종류/ 소유쥬/ 소유그룹/  타인
+]#touch test3.txt
+]#chmod a+x test3.txt  (a   모두에게 +x 권한)
+]#chmod o-x test3.txt  (o   타인에게 -x 권한)
+]#chmoc g+w test3.txt  (g   그룹에게 +w 권한)
+---------------------------------------------------------------
+
+]#cat > test3.txt
+ls -al                      -- 내용에 명령어를 넣음
+ctrl + c
+]#cat test3.txt
+]#chmod a+x test3.txt       -- 실행부여
+]#ls -al test3.txt
+]#test3.txt                 --실패    (실행은 정확한 경로 말해줘야함)
+]#./test3.txt                 .( 현재위치)  /   실행됨
+-------------------------------------------------------------------
+
+]#du                     --  디렉토리 사용량 출력
+]#df -h             --  파티션의 사용량 출력여
+]#free -h                  --   메모리 사용량
+  Mem  : 1G
+  Swap : 2G    --> 하드웨어의 일부공간을 메모리화 시킨 공간
+
+
+
+===========================vi===================================
+]#vi test4.txt         --  파일이 없다면 새로 만들고 편집모드로 들어감
+i                      -- INSERT 상황만들기
+[esc] 버튼  입력 종료
+:       누르고
+wq     나오기
+:
+
+
+------------------------------------------------------------------
+]$cp test2.html /root          -- 안됨 w 권한이 없어서
+]$ls -al    
+]$cp  test2.html /tmp            
+]$ls /tmp
+---------------------------------------------------------------
+]$su - root               -- 계정변경
+
+]#pwd
+/root
+
+(1) etc 디렉토리로 이동
+]#cd /etc
+
+(2) 리눅스계정의 홈 디렉토리로 이동 /home/linux
+]#cd /home/linux
+
+(3)  생성 디렉토리로 이동
+]#mkdir  a1
+]#mkdir  a2
+]#cd  a1                       --a1 으로 들어감
+
+a2  로  이동하기 
+[상대경로]
+]#cd ../a2           ( ]#cd ..   상위폴더로 가기 )
+[절대경로]
+]#cd /home/linux/a2
+
+
+]#su linux       root에서 갈때는 암호생략
+]$su - root
+]$su -               둘다 root 로 가는 명령
+
+
+]# useradd test1    아이디만들기
+]# passwd test1    비밀번호 설정
+
+(계정명):(암호):(계정ID):(그룹ID):(홈디렉토리):(리눅스쉘)
+test2:x:1002:1002::/home/test2:/bin/bash
+
+]#cat /etc/shadow

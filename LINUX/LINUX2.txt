@@ -1,0 +1,207 @@
+Applications > System Tools > Terminal (cmd화면 키는법)
+
+Ctrl + alt + f2
+root 1234
+
+]# touch Test1.java (zero 파일 생성)
+
+]# cat /etc/passwd (파일안에 들어가지 안아도 내용확인)
+]# cp /etc/passwd pass.txt (파일복사)
+
+]# mkdir java2     (java2 디렉토리 생성)
+]# touch java2/Test1.java (java2디렉토리에 Test1.java 파일생성)
+]# rmdir java2 ==>디렉토리안에 파일있어서 삭제못함
+]# rm -rf java2 ==>강제삭제
+			     u   g   o
+]# touch test2.txt     종류 소유주 그룹 타인
+]# ls -al test2.txt ==> -   rw- r-- r-- (644)기본생성
+
+]# chmod 777 test2.txt ==> -rwx rwx rwx
+]# chmod 000 test2.txt ==> -000 000 000
+r:파일변경권한
+w:읽기권한
+x:실행권한
+
+test3파일로 허가권 테스트
+]# touch test3.txt
+-rw-r--r--(644)
+
+(1)   a = 모든사용자 + = 추가 x = 권한
+]# chmod a+x test3.txt
+==> -rwxr-xr-x  모든사용자에게 x권한을 추가한다.
+
+(2)   o = 타인 - = 제거 x = 권한
+]# chmod o-x test3.txt
+==> -rwxr-xr-- 타인의 x권한을 제거한다.
+
+(3)   g = 그룹 + = 추가 w = 권한
+]# chmod g+w test3.txt
+==> -rwxrwxr-- 그룹에게 w권한을 추가한다.
+
+(4)   a = 모든사용자 - = 제거 rwx = 권한
+]# chmod a-rwx test3.txt
+==> ---------- 모든사용자의 rwx권한을 제거한다.
+
+================================================
+
+]# cat > test3.txt (파일에 내용넣기)
+ls -al
+ctrl + c (빠져나오기)
+
+]# cat test3.txt 
+ls -al (내가적은내용) --> test3.txt에 실행권한을 주고
+		   --> test3.txt로 ls -al을 실행할수있게
+
+]# chmod a+x test3.txt
+]# ls -al test3.txt (실행권한 - --x--x--x)
+
+실행파일(내용) 실행방법
+]# ./test3.txt  ==> ls -al 실행한거랑 똑같음
+
+================================================
+
+]# du	   (디렉토리 사용량 출력)
+]# df -h   (파티션(윈도우의 c,d드라이브)의 사용량 출력)
+]# free -h (메모리 사용량 출력)
+  Mem : 1G
+  Swap: 2G --> 하드디스크의 일부공간을 메모리화 시킨 공간(가상메모리)
+
+==================================================
+2강
+]# vi test4.txt  ==> i눌러
+----------------
+adadad
+adadad
+adadad 아무거나 입력
+[esc]        빠져나오기
+:wq (enter)    
+]# cat test4.txt (내용확인)
+------------------------------
+]# cp /etc/passwd ./pass2.txt (파일 카피)
+]# vi pass2.txt
+
+-------------------------------------
+터미널에서.
+]$ pwd
+/home/linux 현재위치
+
+]$ vi test1.html
+<html>
+	<body>
+		<font size = "7">java</font>
+	</body>
+</html>
+
+home에 test1.html 파일생김 눌러보면 java
+
+-------------------------------------
+[경로관련]
+
+]$ cp test1.html /root (X)
+]$ ls -al 
+]$ cp test1.html /tmp(없을수도)
+
+---------------------------------------
+[계정변경]
+1번방법 : ]$ su - root 
+2번방법 : ]$ su -
+password 입력
+]# -> root계정으로 변경
+
+(1) /etc 디렉토리로의 이동
+]# cd /etc
+pwd
+/etc
+(2) 리눅스 계정의 홈디렉토리 이동 /home/linux
+etc]# cd /home/linux
+pwd
+/home/linux
+(3) 생성 디렉토리로 이동 (두가지 방법)
+linux]# mkdir a1    a1,a2디렉토리 생성
+linux]# mkdir a2
+linux]# cd a1	    a1디렉토리로 이동
+a1]# pwd
+/home/linux/a1      여기서 a2로 이동하기
+(3-1)상대경로 사용 (나의위치 a1 동일항렬 a2로 이동) 
+a1]# cd ../a2
+a2]# 
+(3-2)절대경로 사용 (나의위치 a2 동일항렬 a1로 이동) 
+a2]# cd /home/linux/a1
+
+]# init 0 (VMware? 종료)
+
+====================================
+[계정생성]
+]$ su -   (root계정으로 접속)
+]# useradd test1 (test1 계정생성)
+]# passwd test1 (password 설정)
+
+]# su - test1
+]$ ls /home
+===================================
+]# cat /etc/passwd
+계정명:암호:계정ID:그룹ID:  홈디렉토리     :리눅스쉘
+linux:x:1000:1000:linux:/home/linux:/bin/bash
+test1:x:1001:1001::/home/test1:/bin/bash
+test2:x:1002:1002::/home/test2:/bin/bash
+
+]# cat /etc/shadow 암호등록파일
+===================================
+[계정삭제]
+]# userdel -r test1
+]# ls /home
+]# cat /etc/passwd
+
+===================================
+]# who (접속자목록확인)
+
+]# vi /etc/issue (로그인메시지)
+i누르고
+linux start.... 적고 esc :wq로 나와서
+ctrl + alt + f2들어가보면 linux start 출력
+===================================
+[파일찾기]
+]# find /etc -name passwd
+]# find /home -user test2 
+	test2 계정이 소유주로 돼있는 파일
+]# find / -perm 777 (허가권 777파일)
+===================================
+[파일내용 출력 명령어]
+]# cat /etc/passwd 전체출력
+]# head /etc/passwd 10개출력 (상위)
+]# head -5 /etc/passwd 5개출력
+]# tail /etc/passwd 10개출력 (하위)
+]# tail -5 /etc/passwd 5개출력
+=================================
+[프로세스 강제종료]
+1.]# vi abc.txt 열어놓기
+2.새로운 터미널 열기
+3.]# ps -aux
+4.abc.txt 프로그램 번호확인(좌측두번째) 4064
+강제중지시키기
+5.]# kill -9 4064
+죽으면 vi abc.txt 색깔 변함
+=================================
+[파일비교]
+]# cp /etc/passwd ./p1
+]# cp /etc/passwd ./p2
+
+]# diff -c p1 p2
+내용이 같으면 결과x
+]# vi p2
+내용변경
+]# diff -c p1 p2
+차이점 설명
+
+파일화
+]# diff -c p1 p2 > p1_p2.txt
+]# cat p1_p2.txt
+================================
+[화면끊기]
+]# ls -al /etc |less
+: 다음화면		[spac	e bar]
+: 이전화면		[b]
+: 나가기		[q]
+
+================================
+[ssh접속]

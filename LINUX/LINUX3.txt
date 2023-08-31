@@ -1,0 +1,172 @@
+192.168.85.130
+
+
+1. crontab   : 예약시스템
+2. tar       : 압축
+3. ping      : 패킷
+4. nslookup  : 네임서버 확인 명령
+5. ssh       : 리눅스명령어 사용을 위한 접근 프로그램
+
+
+1. ping - 네트워크 점검 용도 ex) ]#ping google.com
+2. ifconfig - 내 시스템의 IP주소 확인
+3. nslookup - 특정 도메인의 관리IP주소(정보) 확인 시 사용
+    ex) ]#nslookup google.com
+
+
+=========================================================================
+
+
+
+date -s "20230703 11:31:00"        원하는 날짜,시간 맞추기
+
+
+{crontab 예약}
+
+crontab -e
+
+분 시 일 월 요일   명령어
+33 18 * * * touch tmp/test1004.txt    (매일 6시 33분 명령)
+esc
+:wq
+
+crontab -l(엘)  확인
+
+{tar 압축}
+
+]#cd /
+]#ls
+]#tar cvfz home1.tar.gz home         --home디렉토리를  home1.tar.gz 로 압축
+]#ls
+
+]#mkdir backup                       --backup 디렉토리생성
+]#mv home1.tar.gz backup             --안으로 압축파일 옮김
+]#cd backup                          --backup 으로 들어감
+]#ls
+]#tar xvfz home1.tar.gz              --압축 풀기
+]#ls
+
+
+{백업 실행파일 생성 후 예약 }
+
+]#cd 
+]#vi backup.sh
+----------------------------------------------------
+tar cvfz home2.tar.gz /home
+mv home2.tar.gz /backup
+[esc]   :wq   로  나오기
+
+]#chmod 777 backup.sh                 --실행권한 까지 다 주기
+]#./backup.sh             	      --실행하기
+]#ls /backup
+----------------------------------------------------
+]#crontab -e
+42 11 * * * /root/backup.sh           --실행파일 예약으로 실행하기
+
+]#vi backup.sh
+tar cvfz home3.tar.gz /home
+mv home3.tar.gz /backup
+---------------------------------------------------
+]#clear
+]#ls /backup
+
+
+{실습1}
+
+]#mkdir /tmp/sample
+]#ls /tmp
+
+]#cp /etc/hosts /tmp/sample/hosts.txt
+]#cp /etc/resolv.conf /tmp/sample/resolv.txt
+]#ls /tmp/sample
+
+]#tar cvfz sample.tar.gz /tmp/sample
+]#ls
+]#mv sample.tar.gz /backup
+
+---------------------------------------쉘 스크립트----------
+]#vi test1.sh
+
+date
+pwd
+ls
+[esc]   :wq
+
+]#chmod 777 test1.sh
+]#./test1.sh
+----------------------------------------------------------
+]#vi test2.sh
+
+#!/bin/sh
+echo "lunux     100"      -- 띄어쓰기 다 인정
+echo 'java      100'      -- 띄어쓰기 다 인정
+echo oracle     100       -- 띄어쓰기 하나만 인정됨
+city=Seoul                       -- 변수 생성시 공백 불인정
+city="Seoul"   (가능)
+city=  Seoul    (불가능)
+echo $city
+echo "welcome to $city"
+echo 'welcome to $city'    변수가 $city 입력한 그대로 나옴
+echo welcome to $city
+
+
+-----------------------------------------------------------
+]#vi test4.sh
+
+eng=$1
+kor=$2
+sum=`expr $eng + $kor`          -- 띄어쓰기 해야함,   (')아님  (`)
+avg=`expr $sum / 2`
+echo eng = $eng
+echo kor = $kor
+
+echo sum = $sum
+echo avg = $avg
+]#chmod 777 test4.sh
+./test4.sh 100 90              -- $1 (100)   $2 (90)  
+
+-------------------------------------------------------------
+tar cvfz home_$(date +%Y%m%d_%H%M%S).tar.gz /home  --home_현재시간 으로 압축
+
+
+1. etc/hosts
+2. 네임서버
+==============================================================
+FTP서버   -> 자료(업로드/다운로드)
+SSH서버   -> 명령어 실행 및 관리의 목적
+WEB서버   -> 홈페이지를 보여주려는 목적
+MAIL서버  -> 이메일서버
+NAME서버   //
+1. 도메인네임을 IP주소로 바꾸어주는 일
+2. IP주소를 도메인 네임으로 바꾸어주는 일
+=================================================
+예) naver.com ( 디자인/개발자 )
+
+1. 개발자가 내용변경 -> FTP도구를 이용하여 올림 -> FTP서버프로그램
+2. 일반사용자가 접근(홈페이지이용) -> 브라우저 -> WEB서버프로그램
+3. 서버관리자가 접근(리눅스명령어) -> SSH -> SSH(서버)프로그램
+
+=======================================================
+[ssh 서버/ 접근]   win - linux
+	- (일반)사용자가 리눅스명령어의 사용가능 상태 제공
+
+{LINUX}
+ssh 접근을 위한 서버가동   /  종료
+]# service sshd restart
+]# service sshd stop
+
+{Window}
+
+puTTY 설치
+LINUX 아이피 입력하고 OPEN 
+linux
+123456    로그인
+
+
+
+===========================================================
+]#vi /etc/ssh/sshd_config
+
+set number
+
+38번 쯤  PermitRootLogin no             # 지우고  yes  no 로 바꾸기
