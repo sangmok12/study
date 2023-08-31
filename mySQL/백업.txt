@@ -1,0 +1,19 @@
+데이터베이스  누르고 내보내기  후
+왼쪽에서 형태,형식  선택 후
+아래쪽 파일로 저장  누르고 실행
+
+
+cmd 환경에서
+[접속]
+
+c:/>mysql -utest2 -p1234 apple2
+----------------------------------------------
+mysql>show tables;
+mysql>exit;
+---------------------------------------------
+c:/>mysqldump -utest2 -p1234 apple2 > db.sql
+c:/>mysql -utest2 -p1234 apple2 < db.sql
+
+------------------------------------------------------------
+c:/>mysqldump -utest2 -p1234 apple2 post1 > post1.sql
+c:/>mysql -utest2 -p1234 apple2 < post1.sql

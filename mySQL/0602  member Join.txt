@@ -1,0 +1,159 @@
+0602  member
+
+
+-------------------auto_increment  컬럼이 무조건 primary key 돼야함.
+create table mbr_info(
+unq int unsigned not null auto_increment,
+userid varchar(20) not null,
+pass varchar(100) not null,
+name varchar(20) not null,
+gender enum('M','F'),
+birthday date not null,
+phone varchar(20),
+rdate datetime,
+primary key(unq)
+);
+
+
+create table mbr_other(
+userid varchar(20) not null,
+job varchar(4),
+hobby varchar(4),
+blood enum('A','O','B','AB')
+)
+
+
+
+create table mbr_code(
+unq int unsigned not null auto_increment,
+code_type varchar(2),
+code_id varchar(4),
+code_name varchar(20),
+primary key(unq)
+);
+
+insert into mbr_code values('','c1','h001','태권도');
+insert into mbr_code values('','c1','h002','야구');
+insert into mbr_code values('','c1','h003','축구');
+insert into mbr_code values('','c2','j001','개발');
+insert into mbr_code values('','c2','j002','컨설팅');
+insert into mbr_code values('','c2','j003','디자인');
+
+
+
+insert into mbr_info values
+('','test1',password('1234'),'홍길동','M','2000-12-25','010-777-7777','2021-01-10');
+insert into mbr_info values
+('','test2',password('123456'),'이영희','F','1998-10-25','017-777-1212','2021-02-01')
+insert into mbr_info values
+('','king',password('1111'),'이성계','M','2001-07-07','010-2563-1234',now())
+insert into mbr_info values
+('','test4',md5('7777'),'호돌이','M','1988-07-07','010-3434-1211',now())
+
+
+insert into mbr_other values('test1','j002','h003','O');
+insert into mbr_other values('test2','j003','h002','AB');
+insert into mbr_other values('test3','j001','h002','B');
+
+
+1)
+SELECT userid 아이디,
+name 이름,
+concat(left(birthday,4),'년생') 생년
+from mbr_info
+
+2)
+SELECT userid 아이디,
+name 이름,
+case 
+when gender='F' then '여'
+when gender='M' then '남'
+end 성별,
+left(now(),4)-left(birthday,4) 나이,
+left(rdate,10) 등록일
+from mbr_info
+
+2-1)
+select userid 아이디,
+name 이름,
+if(gender='M','남','여') 성별,
+left(now(),4)-left(birthday,4) 나이,
+left(rdate,10) 등록일
+from mbr_info
+
+3)
+SELECT * from mbr_info where pass = password('1234');
+SELECT * from mbr_info where pass = md5('7777');
+
+4)
+select name,phone from mbr_info 
+where substr(rdate,1,4) >= 2021
+and substr(rdate,6,2) >=2
+
+4-2)
+select name, phone, rdate from mbr_info
+where rdate >= '2021-02-01'
+
+5)
+select * from mbr_info where left(phone,3) != 010
+select * from mbr_info where phone not like '010%'
+
+6)
+select * from mbr_info where left(userid,4) = 'test'
+
+7)
+select i.userid,i.name,o.blood
+from mbr_info i ,mbr_other o
+where i.userid = o.userid
+
+8)
+select 
+m.userid,
+m.name,
+(select code_name from mbr_code where code_id=o.job) 직업,
+(select code_name from mbr_code where code_id=o.hobby) 취미
+from mbr_info m , mbr_other o
+where m.userid = o.userid
+
+8-2)
+select
+m.userid,
+m.name,
+c1.code_name as 직업,
+c2.code_name as 취미
+from mbr_info m, mbr_other o, mbr_code c1, mbr_code c2
+where
+m.userid = o.userid  and
+o.job = c1.code_id  and
+o.hobby = c2.code_id
+
+9)
+select
+m.name,
+c.code_name as 취미
+from mbr_info m, mbr_other o,mbr_code c
+where
+m.userid = o.userid  and
+o.hobby = c.code_id and
+m.name = '홍길동'
+
+10)
+select
+m.name,
+c.code_name as 직업
+from mbr_info m, mbr_other o,mbr_code c
+where
+m.userid = o.userid  and
+o.job = c.code_id and
+m.name = '홍길동'
+
+11)
+select
+m.userid,
+m.name,
+c.code_name as hobby
+from mbr_info m, mbr_other o, mbr_code c
+where
+m.userid = o.userid and
+o.hobby = c.code_id and
+c.code_name = '야구'

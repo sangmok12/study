@@ -1,0 +1,8 @@
+MySQL
+
+설치
+admin  / apmsetup   으로 들어감
+
+새 데이터베이스 생성  - apple
+새 사용자 생성 test1 / 123456 
+ 만듦
